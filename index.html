@@ -25,6 +25,9 @@
     .btn-primary{ background:#facc15; color:#1f2937; padding:15px 30px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; font-size:1.1rem; transition:0.3s; display:inline-block; margin-top:20px;}
     .btn-primary:hover{ background:#f59e0b; color:white; }
 
+    /* Disabled state */
+    .btn-disabled { pointer-events:none; opacity:0.7; cursor:default; }
+
     /* Header Avatar */
     #avatar-container {
       width: 300px;
@@ -68,16 +71,24 @@
 </head>
 <body>
 
+<!-- Header -->
 <header class="header">
   <h1>From Campus to Field Mastery</h1>
   <p>Turn your agricultural skills into recognized achievements. Designed exclusively for Nigerian university agrarian students.</p>
-  <a href="signup.html" class="btn-primary">Join Now & Start Mastery</a>
+  
+  <!-- Disabled Button -->
+  <a href="#" class="btn-primary btn-disabled" id="join-btn">Join Now & Start Mastery</a>
+  <p id="wait-note" style="text-align:center; color:#f59e0b; font-style:italic; margin-top:10px;">
+    We’re putting the finishing touches! Enrollment will open by Monday. Stay tuned.
+  </p>
 
   <!-- GLB Avatar -->
   <div id="avatar-container"></div>
 </header>
 
+<!-- Main Content -->
 <main>
+  <!-- Features -->
   <section class="section">
     <h2 class="section-title">Why Students Love <span class="highlight">[LMS SaaS Name]</span></h2>
     <div class="features">
@@ -99,6 +110,7 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
   <section class="section section-alt">
     <h2 class="section-title">What Our Students Say</h2>
     <div class="testimonials-container">
@@ -120,16 +132,46 @@
     </div>
   </section>
 
-  <section class="section section-center">
-    <h2>Secure Your Spot Today</h2>
-    <p>Limited early-access enrollment is open. Be among the first to master agriculture and showcase your expertise.</p>
-    <a href="signup.html" class="btn-primary">Join Now & Claim Your Certificate</a>
+  <!-- Sign-Up Form (Hidden Until Launch) -->
+  <section class="section section-center" id="signup-form" style="display:none;">
+    <h2>Sign Up for Early Access</h2>
+    <iframe
+      id="JotFormIFrame-252612332436551"
+      title="Sponsor Sign Up And Payment"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen; payment"
+      src="https://form.jotform.com/252612332436551"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:600px;border:none;"
+      scrolling="no"
+    ></iframe>
   </section>
 </main>
 
 <footer>
   &copy; 2025 [LMS SaaS Name]. All rights reserved. | Designed for Nigerian university agrarian students.
 </footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script>
+  window.jotformEmbedHandler("iframe[id='JotFormIFrame-252612332436551']", "https://form.jotform.com/");
+
+  // Disable header button
+  const joinBtn = document.getElementById('join-btn');
+  joinBtn.addEventListener('click', e => {
+    e.preventDefault();
+    alert("Enrollment opens on Monday. Thank you for your patience!");
+  });
+
+  // Show the form when ready (Monday)
+  function launchEnrollment() {
+    document.getElementById('signup-form').style.display = 'block';
+    document.getElementById('wait-note').style.display = 'none';
+    joinBtn.style.display = 'none';
+  }
+</script>
 
 <script>
   // GSAP Animations
@@ -170,7 +212,6 @@
   const loader = new THREE.GLTFLoader();
   let mixer;
 
-  // Load your GLB (same folder as index.html)
   loader.load('male_character_3.glb', function(gltf) {
     const model = gltf.scene;
     scene.add(model);
@@ -194,12 +235,12 @@
 
   camera.position.z = 3;
 
-// Responsive avatar
   window.addEventListener('resize', () => {
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     camera.aspect = container.offsetWidth / container.offsetHeight;
     camera.updateProjectionMatrix();
   });
 </script>
+
 </body>
 </html>
