@@ -59,6 +59,43 @@
     /* Section Titles */
     .section-title{ text-align:center; font-size:2rem; margin-bottom:20px; }
 
+    /* Modal (Popup) */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 90%;
+      padding: 20px;
+      position: relative;
+    }
+    .modal-content iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
     @media(max-width:600px){
       .testimonial-card{ min-width:100%; }
       .features{ grid-template-columns:1fr; }
@@ -68,21 +105,16 @@
 </head>
 <body>
 
-<!-- Header -->
 <header class="header">
   <h1>From Campus to Field Mastery</h1>
   <p>Turn your agricultural skills into recognized achievements. Designed exclusively for Nigerian university agrarian students.</p>
-  
-  <!-- Active Button -->
-  <a href="#signup-form" class="btn-primary" id="join-btn">Join Now & Start Mastery</a>
+  <a href="#" class="btn-primary" id="openFormBtn">Join Now & Start Mastery</a>
 
   <!-- GLB Avatar -->
   <div id="avatar-container"></div>
 </header>
 
-<!-- Main Content -->
 <main>
-  <!-- Features -->
   <section class="section">
     <h2 class="section-title">Why Students Love <span class="highlight">[LMS SaaS Name]</span></h2>
     <div class="features">
@@ -104,7 +136,6 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
   <section class="section section-alt">
     <h2 class="section-title">What Our Students Say</h2>
     <div class="testimonials-container">
@@ -126,32 +157,34 @@
     </div>
   </section>
 
-  <!-- Sign-Up Form (Now Visible) -->
-  <section class="section section-center" id="signup-form">
-    <h2>Sign Up for Early Access</h2>
+  <section class="section section-center">
+    <h2>Secure Your Spot Today</h2>
+    <p>Limited early-access enrollment is open. Be among the first to master agriculture and showcase your expertise.</p>
+    <a href="#" class="btn-primary" id="openFormBtn2">Join Now & Claim Your Certificate</a>
+  </section>
+</main>
+
+<!-- Modal with JotForm -->
+<div class="modal" id="formModal">
+  <div class="modal-content">
+    <button class="close-btn" id="closeFormBtn">X</button>
     <iframe
       id="JotFormIFrame-252612332436551"
       title="Sponsor Sign Up And Payment"
-      onload="window.parent.scrollTo(0,0)"
       allowtransparency="true"
       allow="geolocation; microphone; camera; fullscreen; payment"
       src="https://form.jotform.com/252612332436551"
       frameborder="0"
-      style="min-width:100%;max-width:100%;height:600px;border:none;"
       scrolling="no"
     ></iframe>
-  </section>
-</main>
+  </div>
+</div>
 
 <footer>
   &copy; 2025 [LMS SaaS Name]. All rights reserved. | Designed for Nigerian university agrarian students.
 </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
 <script>
-  window.jotformEmbedHandler("iframe[id='JotFormIFrame-252612332436551']", "https://form.jotform.com/");
-
   // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
 
@@ -190,6 +223,7 @@
   const loader = new THREE.GLTFLoader();
   let mixer;
 
+  // Load your GLB (same folder as index.html)
   loader.load('male_character_3.glb', function(gltf) {
     const model = gltf.scene;
     scene.add(model);
@@ -213,12 +247,26 @@
 
   camera.position.z = 3;
 
+  // Responsive avatar
   window.addEventListener('resize', () => {
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     camera.aspect = container.offsetWidth / container.offsetHeight;
     camera.updateProjectionMatrix();
   });
-</script>
 
+  // Modal logic
+  const modal = document.getElementById("formModal");
+  const openBtn1 = document.getElementById("openFormBtn");
+  const openBtn2 = document.getElementById("openFormBtn2");
+  const closeBtn = document.getElementById("closeFormBtn");
+
+  function openModal() { modal.style.display = "flex"; }
+  function closeModal() { modal.style.display = "none"; }
+
+  openBtn1.addEventListener("click", openModal);
+  openBtn2.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  window.addEventListener("click", (e) => { if(e.target === modal){ closeModal(); } });
+</script>
 </body>
   </html>
