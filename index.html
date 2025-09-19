@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[LMS SaaS Name] | Master Agriculture</title>
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   <style>
     /* Base */
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9fafb; color:#1f2937; overflow-x:hidden; }
@@ -46,6 +48,11 @@
     /* Section Titles */
     .section-title{ text-align:center; font-size:2rem; margin-bottom:20px; }
 
+    /* Responsive adjustments */
+    @media(max-width:600px){
+      .testimonial-card{ min-width:100%; }
+      .features{ grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
@@ -111,13 +118,16 @@
 </footer>
 
 <script>
-  // Animate feature progress bars on scroll
+  // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
+
+  // Feature progress bars
   document.querySelectorAll('.feature-card').forEach(card => {
     const progress = card.querySelector('.progress-bar');
     gsap.to(progress, {
       width: card.dataset.progress + '%',
       duration: 1.5,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: card,
         start: "top 80%",
@@ -128,30 +138,30 @@
 
   // Testimonials slider
   const testimonials = document.querySelector('.testimonials');
-  const total = testimonials.children.length;
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
   let index = 0;
 
   function updateSlider() {
-    testimonials.style.transform = `translateX(-${index * 100}%)`;
+    const cardWidth = testimonialCards[0].offsetWidth + 30; // includes gap
+    testimonials.style.transform = `translateX(-${index * cardWidth}px)`;
   }
 
   document.getElementById('prev').addEventListener('click', () => {
-    index = (index - 1 + total) % total;
+    index = (index - 1 + testimonialCards.length) % testimonialCards.length;
     updateSlider();
   });
   document.getElementById('next').addEventListener('click', () => {
-    index = (index + 1) % total;
+    index = (index + 1) % testimonialCards.length;
     updateSlider();
   });
 
-  // Scroll animations for section titles
+  // Section titles scroll animation
   gsap.utils.toArray('h2.section-title').forEach(title => {
     gsap.from(title, {
       y:50, opacity:0, duration:1, ease:"power2.out",
       scrollTrigger:{ trigger:title, start:"top 90%", toggleActions:"play none none none"}
     });
   });
-
 </script>
 </body>
-  </html>
+</html>
