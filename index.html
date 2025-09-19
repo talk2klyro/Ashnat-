@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,9 +24,6 @@
     .header p{ font-size:1.2rem; color:#e0e7ff; margin-bottom:20px; }
     .btn-primary{ background:#facc15; color:#1f2937; padding:15px 30px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; font-size:1.1rem; transition:0.3s; display:inline-block; margin-top:20px;}
     .btn-primary:hover{ background:#f59e0b; color:white; }
-
-    /* Disabled state */
-    .btn-disabled { pointer-events:none; opacity:0.7; cursor:default; }
 
     /* Header Avatar */
     #avatar-container {
@@ -76,11 +73,8 @@
   <h1>From Campus to Field Mastery</h1>
   <p>Turn your agricultural skills into recognized achievements. Designed exclusively for Nigerian university agrarian students.</p>
   
-  <!-- Disabled Button -->
-  <a href="#" class="btn-primary btn-disabled" id="join-btn">Join Now & Start Mastery</a>
-  <p id="wait-note" style="text-align:center; color:#f59e0b; font-style:italic; margin-top:10px;">
-    We’re putting the finishing touches! Enrollment will open by Monday. Stay tuned.
-  </p>
+  <!-- Active Button -->
+  <a href="#signup-form" class="btn-primary" id="join-btn">Join Now & Start Mastery</a>
 
   <!-- GLB Avatar -->
   <div id="avatar-container"></div>
@@ -132,8 +126,8 @@
     </div>
   </section>
 
-  <!-- Sign-Up Form (Hidden Until Launch) -->
-  <section class="section section-center" id="signup-form" style="display:none;">
+  <!-- Sign-Up Form (Now Visible) -->
+  <section class="section section-center" id="signup-form">
     <h2>Sign Up for Early Access</h2>
     <iframe
       id="JotFormIFrame-252612332436551"
@@ -158,22 +152,6 @@
 <script>
   window.jotformEmbedHandler("iframe[id='JotFormIFrame-252612332436551']", "https://form.jotform.com/");
 
-  // Disable header button
-  const joinBtn = document.getElementById('join-btn');
-  joinBtn.addEventListener('click', e => {
-    e.preventDefault();
-    alert("Enrollment opens on Monday. Thank you for your patience!");
-  });
-
-  // Show the form when ready (Monday)
-  function launchEnrollment() {
-    document.getElementById('signup-form').style.display = 'block';
-    document.getElementById('wait-note').style.display = 'none';
-    joinBtn.style.display = 'none';
-  }
-</script>
-
-<script>
   // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
 
@@ -243,4 +221,4 @@
 </script>
 
 </body>
-</html>
+          </html>
