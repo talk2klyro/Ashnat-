@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+     <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[LMS SaaS Name] | Master Agriculture</title>
+
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+
   <!-- Three.js -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/examples/js/loaders/GLTFLoader.js"></script>
+
   <style>
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9fafb; color:#1f2937; overflow-x:hidden; }
     h1,h2,h3{ margin:0; }
@@ -59,7 +62,7 @@
     /* Section Titles */
     .section-title{ text-align:center; font-size:2rem; margin-bottom:20px; }
 
-    /* Modal (Popup) */
+    /* Modal (popup form) */
     .modal {
       display: none;
       position: fixed;
@@ -72,34 +75,35 @@
     }
     .modal-content {
       background: white;
-      border-radius: 12px;
-      max-width: 800px;
-      width: 90%;
       padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 800px;
       position: relative;
-    }
-    .modal-content iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
     }
     .close-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #ef4444;
+      top: 10px; right: 10px;
+      background: #f44336;
       color: white;
       border: none;
-      padding: 5px 10px;
       border-radius: 50%;
+      width: 30px; height: 30px;
+      font-weight: bold;
       cursor: pointer;
-      font-size: 16px;
+    }
+    .close-btn:hover { background: #d32f2f; }
+    .modal iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
     }
 
     @media(max-width:600px){
       .testimonial-card{ min-width:100%; }
       .features{ grid-template-columns:1fr; }
       #avatar-container { width: 90%; height: auto; }
+      .modal iframe { height: 500px; }
     }
   </style>
 </head>
@@ -108,9 +112,7 @@
 <header class="header">
   <h1>From Campus to Field Mastery</h1>
   <p>Turn your agricultural skills into recognized achievements. Designed exclusively for Nigerian university agrarian students.</p>
-  <a href="#" class="btn-primary" id="openFormBtn">Join Now & Start Mastery</a>
-
-  <!-- GLB Avatar -->
+  <a href="#" class="btn-primary open-form">Join Now & Start Mastery</a>
   <div id="avatar-container"></div>
 </header>
 
@@ -160,9 +162,13 @@
   <section class="section section-center">
     <h2>Secure Your Spot Today</h2>
     <p>Limited early-access enrollment is open. Be among the first to master agriculture and showcase your expertise.</p>
-    <a href="#" class="btn-primary" id="openFormBtn2">Join Now & Claim Your Certificate</a>
+    <a href="#" class="btn-primary open-form">Join Now & Claim Your Certificate</a>
   </section>
 </main>
+
+<footer>
+  &copy; 2025 [LMS SaaS Name]. All rights reserved. | Designed for Nigerian university agrarian students.
+</footer>
 
 <!-- Modal with JotForm -->
 <div class="modal" id="formModal">
@@ -180,17 +186,42 @@
   </div>
 </div>
 
-<footer>
-  &copy; 2025 [LMS SaaS Name]. All rights reserved. | Designed for Nigerian university agrarian students.
-</footer>
-
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
 <script>
+  window.jotformEmbedHandler("iframe[id='JotFormIFrame-252612332436551']", "https://form.jotform.com/");
+
+  // Modal logic
+  const modal = document.getElementById("formModal");
+  const closeBtn = document.getElementById("closeFormBtn");
+
+  // Attach open event to all Join buttons
+  document.querySelectorAll(".open-form").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "flex";
+    });
+  });
+
+  // Close modal
+  closeBtn.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", (e) => {
+    if(e.target === modal){ modal.style.display = "none"; }
+  });
+
   // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
-
   document.querySelectorAll('.feature-card').forEach(card => {
     const progress = card.querySelector('.progress-bar');
-    gsap.to(progress, { width: card.dataset.progress + '%', duration: 1.5, ease: "power2.out", scrollTrigger:{ trigger: card, start:"top 80%", toggleActions:"play none none none"} });
+    gsap.to(progress, {
+      width: card.dataset.progress + '%',
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger:{
+        trigger: card,
+        start:"top 80%",
+        toggleActions:"play none none none"
+      }
+    });
   });
 
   // Testimonials slider
@@ -201,12 +232,28 @@
     const cardWidth = testimonialCards[0].offsetWidth + 30;
     testimonials.style.transform = `translateX(-${index * cardWidth}px)`;
   }
-  document.getElementById('prev').addEventListener('click', () => { index = (index - 1 + testimonialCards.length) % testimonialCards.length; updateSlider(); });
-  document.getElementById('next').addEventListener('click', () => { index = (index + 1) % testimonialCards.length; updateSlider(); });
+  document.getElementById('prev').addEventListener('click', () => {
+    index = (index - 1 + testimonialCards.length) % testimonialCards.length;
+    updateSlider();
+  });
+  document.getElementById('next').addEventListener('click', () => {
+    index = (index + 1) % testimonialCards.length;
+    updateSlider();
+  });
 
   // Section titles scroll animation
   gsap.utils.toArray('h2.section-title').forEach(title => {
-    gsap.from(title, { y:50, opacity:0, duration:1, ease:"power2.out", scrollTrigger:{ trigger:title, start:"top 90%", toggleActions:"play none none none"} });
+    gsap.from(title, {
+      y:50,
+      opacity:0,
+      duration:1,
+      ease:"power2.out",
+      scrollTrigger:{
+        trigger:title,
+        start:"top 90%",
+        toggleActions:"play none none none"
+      }
+    });
   });
 
   // --- Three.js GLB Avatar ---
@@ -222,8 +269,6 @@
 
   const loader = new THREE.GLTFLoader();
   let mixer;
-
-  // Load your GLB (same folder as index.html)
   loader.load('male_character_3.glb', function(gltf) {
     const model = gltf.scene;
     scene.add(model);
@@ -253,20 +298,6 @@
     camera.aspect = container.offsetWidth / container.offsetHeight;
     camera.updateProjectionMatrix();
   });
-
-  // Modal logic
-  const modal = document.getElementById("formModal");
-  const openBtn1 = document.getElementById("openFormBtn");
-  const openBtn2 = document.getElementById("openFormBtn2");
-  const closeBtn = document.getElementById("closeFormBtn");
-
-  function openModal() { modal.style.display = "flex"; }
-  function closeModal() { modal.style.display = "none"; }
-
-  openBtn1.addEventListener("click", openModal);
-  openBtn2.addEventListener("click", openModal);
-  closeBtn.addEventListener("click", closeModal);
-  window.addEventListener("click", (e) => { if(e.target === modal){ closeModal(); } });
 </script>
 </body>
   </html>
