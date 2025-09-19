@@ -7,8 +7,10 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/examples/js/loaders/GLTFLoader.js"></script>
   <style>
-    /* Base */
     body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9fafb; color:#1f2937; overflow-x:hidden; }
     h1,h2,h3{ margin:0; }
     a{text-decoration:none; }
@@ -24,13 +26,10 @@
     .btn-primary:hover{ background:#f59e0b; color:white; }
 
     /* Header Avatar */
-    .header-avatar {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .sketchfab-embed-wrapper iframe {
+    #avatar-container {
       width: 300px;
       height: 300px;
+      margin: 30px auto 0 auto;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
@@ -60,11 +59,10 @@
     /* Section Titles */
     .section-title{ text-align:center; font-size:2rem; margin-bottom:20px; }
 
-    /* Responsive adjustments */
     @media(max-width:600px){
       .testimonial-card{ min-width:100%; }
       .features{ grid-template-columns:1fr; }
-      .sketchfab-embed-wrapper iframe { width: 90%; height: auto; }
+      #avatar-container { width: 90%; height: auto; }
     }
   </style>
 </head>
@@ -75,16 +73,8 @@
   <p>Turn your agricultural skills into recognized achievements. Designed exclusively for Nigerian university agrarian students.</p>
   <a href="signup.html" class="btn-primary">Join Now & Start Mastery</a>
 
-  <!-- Sketchfab Avatar -->
-  <div class="header-avatar">
-    <div class="sketchfab-embed-wrapper">
-      <iframe title="male character #3" frameborder="0" allowfullscreen
-        mozallowfullscreen="true" webkitallowfullscreen="true"
-        allow="autoplay; fullscreen; xr-spatial-tracking"
-        src="https://sketchfab.com/models/da7723ef494e4627869bba6f4d65577f/embed">
-      </iframe>
-    </div>
-  </div>
+  <!-- GLB Avatar -->
+  <div id="avatar-container"></div>
 </header>
 
 <main>
@@ -145,47 +135,71 @@
   // GSAP Animations
   gsap.registerPlugin(ScrollTrigger);
 
-  // Feature progress bars
   document.querySelectorAll('.feature-card').forEach(card => {
     const progress = card.querySelector('.progress-bar');
-    gsap.to(progress, {
-      width: card.dataset.progress + '%',
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-        toggleActions: "play none none none"
-      }
-    });
+    gsap.to(progress, { width: card.dataset.progress + '%', duration: 1.5, ease: "power2.out", scrollTrigger:{ trigger: card, start:"top 80%", toggleActions:"play none none none"} });
   });
 
   // Testimonials slider
   const testimonials = document.querySelector('.testimonials');
   const testimonialCards = document.querySelectorAll('.testimonial-card');
   let index = 0;
-
   function updateSlider() {
-    const cardWidth = testimonialCards[0].offsetWidth + 30; // includes gap
+    const cardWidth = testimonialCards[0].offsetWidth + 30;
     testimonials.style.transform = `translateX(-${index * cardWidth}px)`;
   }
-
-  document.getElementById('prev').addEventListener('click', () => {
-    index = (index - 1 + testimonialCards.length) % testimonialCards.length;
-    updateSlider();
-  });
-  document.getElementById('next').addEventListener('click', () => {
-    index = (index + 1) % testimonialCards.length;
-    updateSlider();
-  });
+  document.getElementById('prev').addEventListener('click', () => { index = (index - 1 + testimonialCards.length) % testimonialCards.length; updateSlider(); });
+  document.getElementById('next').addEventListener('click', () => { index = (index + 1) % testimonialCards.length; updateSlider(); });
 
   // Section titles scroll animation
   gsap.utils.toArray('h2.section-title').forEach(title => {
-    gsap.from(title, {
-      y:50, opacity:0, duration:1, ease:"power2.out",
-      scrollTrigger:{ trigger:title, start:"top 90%", toggleActions:"play none none none"}
-    });
+    gsap.from(title, { y:50, opacity:0, duration:1, ease:"power2.out", scrollTrigger:{ trigger:title, start:"top 90%", toggleActions:"play none none none"} });
+  });
+
+  // --- Three.js GLB Avatar ---
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  const container = document.getElementById('avatar-container');
+  renderer.setSize(container.offsetWidth, container.offsetHeight);
+  container.appendChild(renderer.domElement);
+
+  const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+  scene.add(light);
+
+  const loader = new THREE.GLTFLoader();
+  let mixer;
+
+  // Load your GLB (same folder as index.html)
+  loader.load('male_character_3.glb', function(gltf) {
+    const model = gltf.scene;
+    scene.add(model);
+    model.scale.set(1.2, 1.2, 1.2);
+    model.position.set(0,-1,0);
+
+    if(gltf.animations.length > 0){
+      mixer = new THREE.AnimationMixer(model);
+      const action = mixer.clipAction(gltf.animations[0]);
+      action.play();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if(mixer) mixer.update(0.01);
+      model.rotation.y += 0.005;
+      renderer.render(scene, camera);
+    }
+    animate();
+  });
+
+  camera.position.z = 3;
+
+// Responsive avatar
+  window.addEventListener('resize', () => {
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    camera.aspect = container.offsetWidth / container.offsetHeight;
+    camera.updateProjectionMatrix();
   });
 </script>
 </body>
-        </html>
+</html>
