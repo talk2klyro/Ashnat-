@@ -1,112 +1,58 @@
-[
+here[
   {
     "store_id": 1,
-    "profile_pic": "images/sneaker.jpg",
-    "description": "👟 Step into confidence. The latest sneaker drops & discounts crafted to make every step a statement.",
+    "profile_pic": "images/ahmady_textile.jpg",
+    "description": "🧵 Ahmady Textile: Wrap yourself in elegance. Explore our premium fabrics and Shadda collections crafted for timeless style and unmatched quality.",
     "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/sneakerdeals",
-      "instagram": "https://instagram.com/sneakerdeals"
+      "whatsapp": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t",
+      "facebook": "https://facebook.com/ahmadytextile",
+      "instagram": "https://instagram.com/ahmadytextile"
     },
     "extra_links": [
-      { "title": "🔥 Shop Weekly Drops", "url": "https://sneakerdeals.com/shop" },
-      { "title": "⭐ Exclusive Member Offers", "url": "https://sneakerdeals.com/vip" }
+      { "title": "✨ Browse Fabrics", "url": "https://ahmadytextile.com/fabrics" },
+      { "title": "⭐ Shadda Collection", "url": "https://ahmadytextile.com/shadda" }
     ]
   },
   {
     "store_id": 2,
-    "profile_pic": "images/burgers.jpg",
-    "description": "🍔 Bite into happiness. Our street burgers bring flavor, comfort, and memories in every mouthful.",
+    "profile_pic": "images/ummu_ahlam_collections.jpg",
+    "description": "👗 Ummu Ahlam Collections: Step into sophistication. Discover attires that celebrate elegance, tradition, and modern flair for every occasion.",
     "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/localburgers",
-      "instagram": "https://instagram.com/localburgers"
+      "whatsapp": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t",
+      "facebook": "https://facebook.com/ummuahlamcollections",
+      "instagram": "https://instagram.com/ummuahlamcollections"
     },
     "extra_links": [
-      { "title": "🍟 Today’s Specials", "url": "https://localburgers.com/specials" },
-      { "title": "📍 Find Us Nearby", "url": "https://localburgers.com/location" }
+      { "title": "🌟 Explore Collections", "url": "https://ummuahlam.com/collections" },
+      { "title": "🎁 Special Offers", "url": "https://ummuahlam.com/offers" }
     ]
   },
   {
     "store_id": 3,
-    "profile_pic": "images/gadget.jpg",
-    "description": "📱 Live smarter. From phones to accessories, we power your lifestyle with the gadgets you love.",
+    "profile_pic": "images/ummu_ahlam_accessories.jpg",
+    "description": "👜 Ummu Ahlam Accessories: Complete your look with style. Our curated accessories turn everyday outfits into stunning statements.",
     "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/gadgethub",
-      "instagram": "https://instagram.com/gadgethub"
+      "whatsapp": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c",
+      "facebook": "https://facebook.com/ummuahlamaccessories",
+      "instagram": "https://instagram.com/ummuahlamaccessories"
     },
     "extra_links": [
-      { "title": "⚡ New Tech Arrivals", "url": "https://gadgethub.com/new" },
-      { "title": "💡 Smart Living Deals", "url": "https://gadgethub.com/deals" }
+      { "title": "💍 Browse Accessories", "url": "https://ummuahlam.com/accessories" },
+      { "title": "🎀 Gift Ideas", "url": "https://ummuahlam.com/gifts" }
     ]
   },
   {
     "store_id": 4,
-    "profile_pic": "images/fashion.jpg",
-    "description": "👗 Dress to impress. Fresh styles weekly so you always look as good as you feel.",
+    "profile_pic": "images/didis_home_of_attires.jpg",
+    "description": "🏠 Didi's Home of Attires: Your fashion destination. Discover versatile, high-quality attires designed to inspire confidence and style every day.",
     "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/fashiontrends",
-      "instagram": "https://instagram.com/fashiontrends"
+      "whatsapp": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix",
+      "facebook": "https://facebook.com/didishomeofattires",
+      "instagram": "https://instagram.com/didishomeofattires"
     },
     "extra_links": [
-      { "title": "✨ New Arrivals", "url": "https://fashiontrends.com/new" },
-      { "title": "🎁 Seasonal Collections", "url": "https://fashiontrends.com/season" }
+      { "title": "✨ View Collection", "url": "https://didishome.com/attires" },
+      { "title": "🎉 Seasonal Highlights", "url": "https://didishome.com/seasonal" }
     ]
-  },
-  {
-    "store_id": 5,
-    "profile_pic": "images/books.jpg",
-    "description": "📚 Unlock knowledge. From guides to ebooks, empower your journey with stories that stay forever.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/bookcorner",
-      "instagram": "https://instagram.com/bookcorner"
-    },
-    "extra_links": [
-      { "title": "📖 Browse Library", "url": "https://bookcorner.com/library" },
-      { "title": "🧠 Learning Paths", "url": "https://bookcorner.com/learn" }
+  }
     ]
-  },
-  {
-    "store_id": 6,
-    "profile_pic": "images/farm.jpg",
-    "description": "🌾 Nature’s best on your plate. Farm-fresh food that nourishes your health and soul.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/farmfresh",
-      "instagram": "https://instagram.com/farmfresh"
-    },
-    "extra_links": [
-      { "title": "🥦 Organic Picks", "url": "https://farmfresh.com/organic" },
-      { "title": "🚚 Weekly Deliveries", "url": "https://farmfresh.com/delivery" }
-    ]
-  },
-  {
-    "store_id": 7,
-    "profile_pic": "images/beauty.jpg",
-    "description": "💄 Confidence starts here. Skincare & cosmetics to let your natural glow shine every day.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/beautyglow",
-      "instagram": "https://instagram.com/beautyglow"
-    },
-    "extra_links": [
-      { "title": "💅 Beauty Must-Haves", "url": "https://beautyglow.com/must" },
-      { "title": "🎉 Discounts & Combos", "url": "https://beautyglow.com/deals" }
-    ]
-  },
-  {
-    "store_id": 8,
-    "profile_pic": "images/art.jpg",
-    "description": "🎨 Bring walls to life. Creative art pieces that add color, depth, and emotion to your world.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/abstractarts",
-      "instagram": "https://instagram.com/abstractarts"
-    },
-    "extra_links": [
-      { "title": "🖼️ Gallery", "url": "https://abstractarts.com/gallery" },
-      { "title": "🎨 Custom Orders", "url": "https://abstractarts.com/custom" }
-    ]q
