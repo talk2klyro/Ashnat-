@@ -23,8 +23,12 @@ body {
   background: var(--primary-bg);
   color: var(--text-color);
 }
+
 header {
-  text-align:center; padding:2rem 1rem 1rem 1rem; background: var(--card-bg); border-bottom:2px solid var(--accent-gold);
+  text-align:center;
+  padding:2rem 1rem 1rem 1rem;
+  background: var(--card-bg);
+  border-bottom:2px solid var(--accent-gold);
 }
 header h1 { margin-bottom:0.5rem; color: var(--accent-gold);}
 .submit-store {
@@ -66,9 +70,6 @@ header h1 { margin-bottom:0.5rem; color: var(--accent-gold);}
   color: var(--text-color); position:relative;
 }
 .card:hover { transform:translateY(-5px) scale(1.03); box-shadow:0 8px 20px rgba(255,215,0,0.5);}
-.card.small { grid-row:span 1; grid-column:span 1; }
-.card.medium { grid-row:span 2; grid-column:span 1; }
-.card.large { grid-row:span 2; grid-column:span 2; }
 .card h3 { margin-bottom:0.5rem; color: var(--accent-gold); }
 .card p { font-size:0.9rem; color:#ccc; }
 .badge { position:absolute; top:8px; right:8px; background: var(--hover-gold); color: var(--primary-bg); padding:0.2rem 0.5rem; font-size:0.8rem; border-radius:6px; }
@@ -77,18 +78,15 @@ header h1 { margin-bottom:0.5rem; color: var(--accent-gold);}
 .modal { position:fixed; top:0; left:0; width:100%; height:100%; display:none; justify-content:center; align-items:flex-start; background:rgba(0,0,0,0.85); z-index:100; padding-top:3rem;}
 .modal-content { background: var(--card-bg); padding:2rem; border-radius: var(--radius); max-width:500px; width:90%; text-align:center; position:relative; color: var(--text-color);}
 .close { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:var(--accent-gold);}
-.links-container { display:flex; justify-content:center; align-items:flex-start; margin-top:1.5rem; gap:1rem; perspective:1000px; flex-wrap:wrap;}
-.link-card {
-  background: var(--accent-gold); color:var(--primary-bg);
-  padding:0.75rem 1rem; border-radius:10px; min-width:100px; text-align:center;
-  cursor:pointer; transition: transform 0.3s; flex-shrink:0; text-decoration:none; position:relative;
-}
-.link-card:hover { transform: scale(1.1) rotateZ(0deg); background: var(--hover-gold); color:var(--primary-bg);}
-.link-card::after { content: attr(data-preview); position:absolute; bottom:120%; left:50%; transform:translateX(-50%); background:#222; color:var(--accent-gold); padding:0.4rem 0.6rem; border-radius:6px; font-size:0.75rem; white-space:nowrap; opacity:0; pointer-events:none; transition:opacity 0.25s;}
-.link-card:hover::after { opacity:1;}
+.profile-pic { width:80px; height:80px; border-radius:50%; object-fit:cover; margin-bottom:1rem; }
+.bubble-links { display:flex; justify-content:center; gap:0.5rem; margin:1rem 0; flex-wrap:wrap; }
+.bubble-links a { background: var(--accent-gold); color: var(--primary-bg); padding:0.5rem 0.8rem; border-radius:8px; text-decoration:none; transition: transform var(--transition); }
+.bubble-links a:hover { transform:scale(1.1); background: var(--hover-gold); }
+.extra-links { display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; }
+.extra-links a { color: var(--accent-gold); text-decoration:none; transition: color var(--transition); }
+.extra-links a:hover { color: var(--hover-gold); }
 
 footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
-
 </style>
 </head>
 <body>
@@ -113,10 +111,7 @@ footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
 <div class="modal" id="storeModal" tabindex="-1">
   <div class="modal-content">
     <span class="close" id="closeModal">&times;</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalTagline"></p>
-    <div id="modalVideo"></div>
-    <div id="modalLinks" class="links-container"></div>
+    <div id="profile-container"></div>
   </div>
 </div>
 
@@ -126,90 +121,102 @@ footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script>
-async function loadStores(){
+// Unified JS with combined search + category filter
+let storesData = [];
+let profilesData = [];
+let currentCategory = 'All';
+
+async function loadData(){
   try{
-    const res = await fetch('stores.json');
-    const stores = await res.json();
-    renderStores(stores);
-  }catch(e){console.error(e);}
+    const storesRes = await fetch('stores.json');
+    storesData = await storesRes.json();
+
+    const profilesRes = await fetch('profiles.json');
+    profilesData = await profilesRes.json();
+
+    renderStores(storesData);
+  }catch(e){ console.error(e); }
 }
 
 function renderStores(stores){
   const grid = document.getElementById('storeGrid');
-  grid.innerHTML = '';
+  grid.innerHTML='';
+
   stores.forEach(store=>{
     const card = document.createElement('div');
     const sizes=['small','medium','large'];
-    card.className = `card ${sizes[Math.floor(Math.random()*sizes.length)]}`;
-    card.dataset.category = store.category;
+    card.className=`card ${sizes[Math.floor(Math.random()*sizes.length)]}`;
+    card.dataset.category=store.category;
+    card.dataset.id=store.id;
     card.innerHTML=`<h3>${store.emoji} ${store.name}</h3><p>${store.tagline}</p><span class="badge">${store.emoji}</span>`;
-    card.addEventListener('click', ()=>openModal(store));
+    card.addEventListener('click', ()=>openProfile(store.id));
     grid.appendChild(card);
     gsap.from(card,{opacity:0, y:20, duration:0.5, ease:"power2.out"});
   });
 }
 
-function openModal(store){
-  document.getElementById('modalTitle').innerText=`${store.emoji} ${store.name}`;
-  document.getElementById('modalTagline').innerText=store.tagline;
-  const videoDiv=document.getElementById('modalVideo');
-  videoDiv.innerHTML=store.video_url?`<iframe width="100%" height="250" src="${store.video_url}" frameborder="0" allowfullscreen loading="lazy"></iframe>`:'';
-  const linksContainer=document.getElementById('modalLinks');
-  linksContainer.innerHTML='';
-  if(store.links){
-    const linkKeys=Object.keys(store.links);
-    const mid=(linkKeys.length-1)/2;
-    linkKeys.forEach((key,index)=>{
-      const linkCard=document.createElement('a');
-      linkCard.className='link-card';
-      linkCard.href=store.links[key].url;
-      linkCard.target='_blank';
-      linkCard.innerText=key;
-      linkCard.dataset.preview=store.links[key].preview||"";
-      const rotation=(index-mid)*15;
-      linkCard.style.transform=`rotate(${rotation}deg)`;
-      linksContainer.appendChild(linkCard);
-    });
-  }
+// Open modal with profile
+function openProfile(storeId){
+  const store = storesData.find(s=>s.id===storeId);
+  const profile = profilesData.find(p=>p.store_id===storeId);
+  if(!store || !profile) return;
+
+  const container=document.getElementById('profile-container');
+  container.innerHTML=`
+    <img src="${profile.profile_pic}" alt="${store.name}" class="profile-pic">
+    <h2>${store.emoji} ${store.name}</h2>
+    <p class="tagline">${store.tagline}</p>
+    <p class="description">${profile.description}</p>
+
+    <div class="bubble-links">
+      ${profile.socials.whatsapp?`<a href="${profile.socials.whatsapp}" target="_blank">WhatsApp</a>`:""}
+      ${profile.socials.facebook?`<a href="${profile.socials.facebook}" target="_blank">Facebook</a>`:""}
+      ${profile.socials.instagram?`<a href="${profile.socials.instagram}" target="_blank">Instagram</a>`:""}
+    </div>
+
+    <div class="extra-links">
+      ${profile.extra_links.map(l=>`<a href="${l.url}" target="_blank">${l.title}</a>`).join("")}
+    </div>
+
+    ${store.video_url?`<iframe width="100%" height="250" src="${store.video_url}" frameborder="0" allowfullscreen loading="lazy"></iframe>`:""}
+  `;
+
   const modal=document.getElementById('storeModal');
   modal.style.display='flex';
   gsap.from(".modal-content",{scale:0.8, opacity:0, duration:0.4, ease:"back.out(1.7)"});
   modal.focus();
 }
 
-const modal=document.getElementById('storeModal');
-document.getElementById('closeModal').onclick=()=>{modal.style.display='none';}
-window.onclick=e=>{if(e.target===modal) modal.style.display='none';}
-window.addEventListener('keydown', e=>{if(e.key==='Escape') modal.style.display='none';})
+// Close modal
+document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('storeModal').style.display='none');
+window.addEventListener('click', e=>{if(e.target===document.getElementById('storeModal')) document.getElementById('storeModal').style.display='none';});
+window.addEventListener('keydown', e=>{if(e.key==='Escape') document.getElementById('storeModal').style.display='none';});
 
-document.getElementById('searchBar').addEventListener('input', e=>{
-  const filter=e.target.value.toLowerCase();
-  document.querySelectorAll('.card').forEach(card=>{
-    const text=card.innerText.toLowerCase();
-    card.style.display=text.includes(filter)?'':'none';
-  });
-});
-
-function filterByCategory(category){
-  document.querySelectorAll('.card').forEach(card=>{
-    card.style.display=(category==='All'||card.dataset.category===category)?'':'none';
-    card.style.display=(category==='All'||card.dataset.category===category)?'':'none';
+// Filter function
+function filterCards() {
+  const filterText = document.getElementById('searchBar').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    const matchesSearch = card.innerText.toLowerCase().includes(filterText);
+    const matchesCategory = (currentCategory === 'All' || card.dataset.category === currentCategory);
+    card.style.display = (matchesSearch && matchesCategory) ? 'flex' : 'none';
   });
 }
 
-document.querySelectorAll('.category-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
+// Search input
+document.getElementById('searchBar').addEventListener('input', filterCards);
+
+// Category buttons
+document.querySelectorAll('.category-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const cat=btn.dataset.cat;
-    document.querySelectorAll('.card').forEach(card=>{
-      card.style.display=(cat==='All'||card.dataset.category===cat)?'':'none';
-    });
+    currentCategory = btn.dataset.cat;
+    filterCards();
   });
 });
 
-loadStores();
+// Load data
+loadData();
 </script>
 </body>
   </html>
-</main>
