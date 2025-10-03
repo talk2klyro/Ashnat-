@@ -152,22 +152,60 @@ footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
 <script>
-// Load stores and profiles
-let storesData = [];
-let profilesData = [];
+// ====================== Embedded JSON ======================
+const storesData = [
+  {
+    "id": 1,
+    "name": "Sneaker Deals",
+    "emoji": "👟",
+    "tagline": "🔥 Weekly drops & discounts",
+    "category": "Fashion",
+    "video_url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+  },
+  {
+    "id": 2,
+    "name": "Local Burgers",
+    "emoji": "🍔",
+    "tagline": "Best street burgers in town",
+    "category": "Food",
+    "video_url": ""
+  },
+  {
+    "id": 3,
+    "name": "Gadget Hub",
+    "emoji": "📱",
+    "tagline": "Latest phones & accessories",
+    "category": "Tech",
+    "video_url": ""
+  }
+];
+
+const profilesData = [
+  {
+    "store_id":1,
+    "profile_pic":"images/sneaker.jpg",
+    "description":"👟 Step into confidence. The latest sneaker drops & discounts crafted to make every step a statement.",
+    "socials":{"whatsapp":"https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg","facebook":"https://facebook.com/sneakerdeals","instagram":"https://instagram.com/sneakerdeals"},
+    "extra_links":[{"title":"🔥 Shop Weekly Drops","url":"https://sneakerdeals.com/shop"},{"title":"⭐ Exclusive Member Offers","url":"https://sneakerdeals.com/vip"}]
+  },
+  {
+    "store_id":2,
+    "profile_pic":"images/burgers.jpg",
+    "description":"🍔 Bite into happiness. Our street burgers bring flavor, comfort, and memories in every mouthful.",
+    "socials":{"whatsapp":"https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg","facebook":"https://facebook.com/localburgers","instagram":"https://instagram.com/localburgers"},
+    "extra_links":[{"title":"🍟 Today’s Specials","url":"https://localburgers.com/specials"},{"title":"📍 Find Us Nearby","url":"https://localburgers.com/location"}]
+  },
+  {
+    "store_id":3,
+    "profile_pic":"images/gadget.jpg",
+    "description":"📱 Live smarter. From phones to accessories, we power your lifestyle with the gadgets you love.",
+    "socials":{"whatsapp":"https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg","facebook":"https://facebook.com/gadgethub","instagram":"https://instagram.com/gadgethub"},
+    "extra_links":[{"title":"⚡ New Tech Arrivals","url":"https://gadgethub.com/new"},{"title":"💡 Smart Living Deals","url":"https://gadgethub.com/deals"}]
+  }
+];
+// ============================================================
+
 let currentCategory = 'All';
-
-async function loadData(){
-  try{
-    const storesRes = await fetch('stores.json');
-    storesData = await storesRes.json();
-
-    const profilesRes = await fetch('profiles.json');
-    profilesData = await profilesRes.json();
-
-    renderStores(storesData);
-  }catch(e){ console.error(e); }
-}
 
 // Render store cards
 function renderStores(stores){
@@ -225,7 +263,7 @@ function openProfile(storeId){
   modal.style.display='flex';
   gsap.from(".modal-content",{scale:0.8, opacity:0, duration:0.4, ease:"back.out(1.7)"});
 
-  // Animate extra links in 3D
+  // Animate extra links
   gsap.from(".extra-links a", {
     y: 50,
     opacity: 0,
@@ -259,15 +297,21 @@ document.getElementById('searchBar').addEventListener('input', filterCards);
 // Category buttons
 document.querySelectorAll('.category-btn').forEach(btn => {
   btn.addEventListener('click', () => {
+    // Update active class
     document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
+    // Update current category
     currentCategory = btn.dataset.cat;
+
+    // Filter cards
     filterCards();
   });
 });
 
-// Load all data
-loadData();
+// Initial render
+renderStores(storesData);
 </script>
+
 </body>
 </html>
