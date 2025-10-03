@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Sneaker Deals",
+    "emoji": "👟",
+    "tagline": "🔥 Weekly drops & discounts",
+    "category": "Fashion",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
+        "preview": "Join our WhatsApp group for deals!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/sneakerdeals",
+        "preview": "Follow us on Facebook for updates!"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/sneakerdeals",
+        "preview": "Check our latest posts on Instagram!"
+      }
+    },
+    "video_url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+  },
+  {
+    "id": 2,
+    "name": "Local Burgers",
+    "emoji": "🍔",
+    "tagline": "Best street burgers in town",
+    "category": "Food",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
+        "preview": "Order via WhatsApp!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/localburgers",
+        "preview": "Follow for burger specials!"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/localburgers",
+        "preview": "See our Instagram photos!"
+      }
+    },
+    "video_url": ""
+  },
+  {
+    "id": 3,
+    "name": "Gadget Hub",
+    "emoji": "📱",
+    "tagline": "Latest phones & accessories",
+    "category": "Tech",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
+        "preview": "Join gadget discussions on WhatsApp!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/gadgethub",
+        "preview": "Follow Gadget Hub on Facebook"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/gadgethub",
+        "preview": "Check our product photos on Instagram"
+      }
+    },
+    "video_url": ""
+  }
+]
