@@ -1,34 +1,71 @@
 [
   {
     "id": 1,
-    "name": "Ahmady Textile",
-    "emoji": "🧵",
-    "tagline": "Premium fabric & Shadda collection",
-    "category": "Textiles",
-    "link": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t"
+    "name": "Sneaker Deals",
+    "emoji": "👟",
+    "tagline": "🔥 Weekly drops & discounts",
+    "category": "Fashion",
+    "view_type": "modal",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
+        "preview": "Join our WhatsApp group for deals!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/sneakerdeals",
+        "preview": "Follow us on Facebook for updates!"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/sneakerdeals",
+        "preview": "Check our latest posts on Instagram!"
+      }
+    },
+    "video_url": "https://www.youtube.com/embed/ScMzIvxBSi4"
   },
   {
     "id": 2,
-    "name": "Ummu Ahlam Collections",
-    "emoji": "👗",
-    "tagline": "Elegant traditional attires",
-    "category": "Fashion",
-    "link": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t"
+    "name": "Local Burgers",
+    "emoji": "🍔",
+    "tagline": "Best street burgers in town",
+    "category": "Food",
+    "view_type": "modal",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
+        "preview": "Order via WhatsApp!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/localburgers",
+        "preview": "Follow for burger specials!"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/localburgers",
+        "preview": "See our Instagram photos!"
+      }
+    },
+    "video_url": ""
   },
   {
     "id": 3,
-    "name": "Ummu Ahlam Accessories",
-    "emoji": "👜",
-    "tagline": "Stylish accessories & add-ons",
-    "category": "Accessories",
-    "link": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c"
-  },
-  {
-    "id": 4,
-    "name": "Didi's Home of Attires",
-    "emoji": "🏠",
-    "tagline": "Your one-stop shop for attires",
-    "category": "Fashion",
-    "link": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix"
+    "name": "Gadget Hub",
+    "emoji": "📱",
+    "tagline": "Latest phones & accessories",
+    "category": "Tech",
+    "view_type": "modal",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
+        "preview": "Join gadget discussions on WhatsApp!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/gadgethub",
+        "preview": "Follow Gadget Hub on Facebook"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/gadgethub",
+        "preview": "Check our product photos on Instagram"
+      }
+    },
+    "video_url": ""
   }
 ]
