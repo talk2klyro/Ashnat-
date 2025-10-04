@@ -1,0 +1,224 @@
+/* Reset & Basics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0a0a0a;
+  color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  color: gold;
+  background: linear-gradient(90deg, #111, #222);
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+
+/* Store Grid */
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.store-card {
+  background: #141414;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.store-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25);
+}
+
+.store-card .emoji {
+  font-size: 2rem;
+}
+
+.store-card h3 {
+  margin-top: 0.6rem;
+  color: gold;
+}
+
+.store-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0.5rem 0 1rem;
+}
+
+button.open-profile {
+  padding: 0.6rem 1rem;
+  background: gold;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.open-profile:hover {
+  background: #f1c40f;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: opacity 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #111;
+  border: 1px solid gold;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  color: #fff;
+  position: relative;
+  animation: fadeUp 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: gold;
+}
+
+/* Profile Modal Content */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem auto;
+  display: block;
+  border: 2px solid gold;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-header h2 {
+  color: gold;
+  margin: 0.5rem 0;
+}
+
+.bubble-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.bubble {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+.facebook {
+  background: #1877f2;
+}
+.instagram {
+  background: #e1306c;
+}
+
+.extra-links {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.extra-links a {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 215, 0, 0.15);
+  border-radius: 10px;
+  color: gold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.extra-links a:hover {
+  background: gold;
+  color: #000;
+}
+
+/* Slide-up Page Overlay */
+.slide-page {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background: #111;
+  border-top: 2px solid gold;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -5px 25px rgba(255, 215, 0, 0.2);
+  z-index: 100;
+  overflow-y: auto;
+  transition: bottom 0.5s ease;
+  padding: 1.5rem;
+}
+
+.slide-page.show {
+  bottom: 0;
+}
+
+.back-btn {
+  background: none;
+  color: gold;
+  border: 1px solid gold;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
