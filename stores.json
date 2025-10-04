@@ -8,12 +8,20 @@
     "description": "Discover premium Shadda and fabric collections that make every outfit feel majestic. Trusted by top designers and local style icons.",
     "color_theme": "#d3b88c",
     "view_type": "modal",
-    "image_url": "https://images.unsplash.com/photo-1608259180946-9a7b68f5db23?auto=format&fit=crop&w=900&q=80",
+    "image_url": "https://images.unsplash.com/photo-1608259180946-9a7a68f5db23?auto=format&fit=crop&w=900&q=80",
     "video_url": "",
     "links": {
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t",
         "preview": "Chat with our textile experts on WhatsApp!"
+      },
+      "Facebook": {
+        "url": "",
+        "preview": "Facebook link unavailable"
+      },
+      "Instagram": {
+        "url": "",
+        "preview": "Instagram link unavailable"
       }
     }
   },
@@ -32,6 +40,14 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c",
         "preview": "Shop directly on WhatsApp ✨"
+      },
+      "Facebook": {
+        "url": "",
+        "preview": "Facebook link unavailable"
+      },
+      "Instagram": {
+        "url": "",
+        "preview": "Instagram link unavailable"
       }
     }
   },
@@ -50,6 +66,14 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t",
         "preview": "DM us on WhatsApp for exclusive drops 💬"
+      },
+      "Facebook": {
+        "url": "",
+        "preview": "Facebook link unavailable"
+      },
+      "Instagram": {
+        "url": "",
+        "preview": "Instagram link unavailable"
       }
     }
   },
@@ -68,7 +92,15 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix",
         "preview": "Message us to explore our latest arrivals 💬"
+      },
+      "Facebook": {
+        "url": "",
+        "preview": "Facebook link unavailable"
+      },
+      "Instagram": {
+        "url": "",
+        "preview": "Instagram link unavailable"
       }
     }
   }
-]
+    ]
