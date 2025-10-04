@@ -2,7 +2,7 @@
   {
     "store_id": 1,
     "profile_pic": "images/ahmady_textile.jpg",
-    "description": "🧵 Ahmady Textile: Wrap yourself in elegance. Explore our premium fabrics and Shadda collections crafted for timeless style and unmatched quality.",
+    "description": "🧵 Ahmady Textile — Wrap yourself in elegance. Explore our premium fabrics and Shadda collections crafted for timeless style and unmatched quality.",
     "socials": {
       "whatsapp": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t",
       "facebook": "https://facebook.com/ahmadytextile",
@@ -11,12 +11,13 @@
     "extra_links": [
       { "title": "✨ Browse Fabrics", "url": "https://ahmadytextile.com/fabrics" },
       { "title": "⭐ Shadda Collection", "url": "https://ahmadytextile.com/shadda" }
-    ]
+    ],
+    "video_url": "https://www.youtube.com/embed/ScMzIvxBSi4"
   },
   {
     "store_id": 2,
     "profile_pic": "images/ummu_ahlam_collections.jpg",
-    "description": "👗 Ummu Ahlam Collections: Step into sophistication. Discover attires that celebrate elegance, tradition, and modern flair for every occasion.",
+    "description": "👗 Ummu Ahlam Collections — Step into sophistication. Discover attires that celebrate elegance, tradition, and modern flair for every occasion.",
     "socials": {
       "whatsapp": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t",
       "facebook": "https://facebook.com/ummuahlamcollections",
@@ -25,12 +26,13 @@
     "extra_links": [
       { "title": "🌟 Explore Collections", "url": "https://ummuahlam.com/collections" },
       { "title": "🎁 Special Offers", "url": "https://ummuahlam.com/offers" }
-    ]
+    ],
+    "video_url": ""
   },
   {
     "store_id": 3,
     "profile_pic": "images/ummu_ahlam_accessories.jpg",
-    "description": "👜 Ummu Ahlam Accessories: Complete your look with style. Our curated accessories turn everyday outfits into stunning statements.",
+    "description": "👜 Ummu Ahlam Accessories — Complete your look with style. Our curated accessories turn everyday outfits into stunning statements.",
     "socials": {
       "whatsapp": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c",
       "facebook": "https://facebook.com/ummuahlamaccessories",
@@ -39,12 +41,13 @@
     "extra_links": [
       { "title": "💍 Browse Accessories", "url": "https://ummuahlam.com/accessories" },
       { "title": "🎀 Gift Ideas", "url": "https://ummuahlam.com/gifts" }
-    ]
+    ],
+    "video_url": ""
   },
   {
     "store_id": 4,
     "profile_pic": "images/didis_home_of_attires.jpg",
-    "description": "🏠 Didi's Home of Attires: Your fashion destination. Discover versatile, high-quality attires designed to inspire confidence and style every day.",
+    "description": "🏠 Didi's Home of Attires — Your fashion destination. Discover versatile, high-quality attires designed to inspire confidence and style every day.",
     "socials": {
       "whatsapp": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix",
       "facebook": "https://facebook.com/didishomeofattires",
@@ -53,6 +56,7 @@
     "extra_links": [
       { "title": "✨ View Collection", "url": "https://didishome.com/attires" },
       { "title": "🎉 Seasonal Highlights", "url": "https://didishome.com/seasonal" }
-    ]
+    ],
+    "video_url": ""
   }
-    ]
+]
