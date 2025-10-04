@@ -3,32 +3,72 @@
     "id": 1,
     "name": "Ahmady Textile",
     "emoji": "🧵",
-    "tagline": "Premium fabric & Shadda collection",
+    "tagline": "Touch luxury. Feel confidence. 👑",
     "category": "Textiles",
-    "link": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t"
+    "description": "Discover premium Shadda and fabric collections that make every outfit feel majestic. Trusted by top designers and local style icons.",
+    "color_theme": "#d3b88c",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1608259180946-9a7b68f5db23?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t",
+        "preview": "Chat with our textile experts on WhatsApp!"
+      }
+    }
   },
   {
     "id": 2,
     "name": "Ummu Ahlam Collections",
     "emoji": "👗",
-    "tagline": "Elegant traditional attires",
+    "tagline": "Dress the way you dream 🌙",
     "category": "Fashion",
-    "link": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t"
+    "description": "Elegant traditional attires handcrafted with passion. Each piece tells a story of beauty, culture, and confidence.",
+    "color_theme": "#e1a0b3",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1556906781-9c6a2a1a1f6b?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c",
+        "preview": "Shop directly on WhatsApp ✨"
+      }
+    }
   },
   {
     "id": 3,
-    "name": "Ummu Ahlam Accessories",
-    "emoji": "👜",
-    "tagline": "Stylish accessories & add-ons",
-    "category": "Accessories",
-    "link": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c"
+    "name": "Herssey Collection",
+    "emoji": "💄",
+    "tagline": "Confidence you can wear 💋",
+    "category": "Fashion",
+    "description": "Modern designs with timeless charm. From casual chic to royal glam — own every moment in Herssey style.",
+    "color_theme": "#f2c4c4",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1602810318383-e56efb825c9b?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t",
+        "preview": "DM us on WhatsApp for exclusive drops 💬"
+      }
+    }
   },
   {
     "id": 4,
     "name": "Didi's Home of Attires",
     "emoji": "🏠",
-    "tagline": "Your one-stop shop for attires",
+    "tagline": "Home of beauty, made for you 💞",
     "category": "Fashion",
-    "link": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix"
+    "description": "Your one-stop destination for luxury attires. Crafted to inspire elegance and designed for everyday queens.",
+    "color_theme": "#c5a5ff",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1606761568499-6b47aa5a07a0?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix",
+        "preview": "Message us to explore our latest arrivals 💬"
+      }
+    }
   }
 ]
