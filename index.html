@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store Showcase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ Store Showcase</h1>
+  </header>
+
+  <main>
+    <section id="stores-container" class="stores-grid"></section>
+  </main>
+
+  <!-- Modal View -->
+  <div id="storeModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <div id="profile-container"></div>
+    </div>
+  </div>
+
+  <!-- Slide-up Page View (for future) -->
+  <div id="slidePage" class="slide-page hidden">
+    <button id="closePage" class="back-btn">← Back</button>
+    <div id="page-content"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
