@@ -18,27 +18,15 @@
 }
 
 * { box-sizing:border-box; margin:0; padding:0; }
-body { 
-  font-family: "Poppins", Arial, sans-serif; 
-  background: var(--primary-bg); 
-  color: var(--text-color); 
-  overflow-x: hidden;
-}
+body { font-family: Arial, sans-serif; background: var(--primary-bg); color: var(--text-color); }
 
-/* Header */
 header {
   text-align:center;
   padding:2rem 1rem 1rem 1rem;
   background: var(--card-bg);
   border-bottom:2px solid var(--accent-gold);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
-header h1 { 
-  margin-bottom:0.5rem; 
-  color: var(--accent-gold);
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(255,215,0,0.4);
-}
+header h1 { margin-bottom:0.5rem; color: var(--accent-gold);}
 .submit-store {
   display:inline-block;
   background: var(--accent-gold);
@@ -51,112 +39,45 @@ header h1 {
   text-decoration:none;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.submit-store:hover { 
-  transform: scale(1.05); 
-  box-shadow:0 0 12px var(--hover-gold);
-}
-.submit-desc { 
-  margin-top:0.5rem; 
-  font-size:0.9rem; 
-  color:#ccc; 
-}
-.search-bar { 
-  display:block; 
-  margin:1rem auto; 
-  max-width:400px; 
-  padding:0.5rem 1rem; 
-  border-radius:8px; 
-  border:1px solid var(--text-color); 
-  background:#222; 
-  color:#fff; 
-  outline: none;
-  transition: border 0.3s ease;
-}
-.search-bar:focus {
-  border: 1px solid var(--accent-gold);
-}
+.submit-store:hover { transform: scale(1.05); box-shadow:0 0 12px var(--hover-gold);}
+.submit-desc { margin-top:0.5rem; font-size:0.9rem; color:#ccc; }
+.search-bar { display:block; margin:1rem auto; max-width:400px; padding:0.5rem 1rem; border-radius:8px; border:1px solid var(--text-color); background:#222; color:#fff; }
 
 /* Categories */
-.categories { 
-  display:flex; 
-  justify-content:center; 
-  gap:0.5rem; 
-  margin:1rem 0; 
-  flex-wrap:wrap; 
-}
+.categories { display:flex; justify-content:center; gap:0.5rem; margin:1rem 0; flex-wrap:wrap; }
 .category-btn {
   background: var(--card-bg);
-  border:none; 
-  padding:0.5rem 1rem;
+  border:none; padding:0.5rem 1rem;
   border-radius: var(--radius);
-  cursor:pointer; 
-  color:var(--text-color);
+  cursor:pointer; color:var(--text-color);
   transition: transform var(--transition), background var(--transition);
 }
-.category-btn:hover { 
-  transform:scale(1.05); 
-  background: var(--hover-gold); 
-  color: var(--primary-bg);
-}
-.category-btn.active { 
-  background: var(--accent-gold); 
-  color: var(--primary-bg); 
-  font-weight: bold;
-}
+.category-btn:hover { transform:scale(1.05); background: var(--hover-gold); color: var(--primary-bg);}
+.category-btn.active { background: var(--accent-gold); color: var(--primary-bg); }
 
 /* Grid / Cards */
-.grid { 
-  display:grid; 
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
-  gap:1rem; 
-  padding:1rem; 
-  position:relative; 
-}
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); grid-auto-rows:180px; gap:1rem; padding:1rem; position:relative; }
 .card {
-  background: var(--card-bg); 
-  border-radius:var(--radius);
+  background: var(--card-bg); border-radius:var(--radius);
   box-shadow:var(--shadow);
-  display:flex; 
-  flex-direction:column; 
-  justify-content:center; 
-  align-items:center;
-  text-align:center; 
-  padding:1rem; 
-  cursor:pointer;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:1rem; cursor:pointer;
   transition: transform var(--transition), box-shadow var(--transition);
-  color: var(--text-color); 
-  position:relative;
-  overflow: hidden;
+  color: var(--text-color); position:relative;
 }
 .card:hover { 
   transform: translateY(-8px) scale(1.05) rotateX(2deg) rotateY(2deg); 
   box-shadow: 0 12px 24px rgba(255,215,0,0.6);
   z-index: 10;
 }
-.card h3 { 
-  margin-bottom:0.5rem; 
-  color: var(--accent-gold); 
-  font-size: 1.1rem;
-}
-.card p { 
-  font-size:0.9rem; 
-  color:#ccc; 
-}
-.badge { 
-  position:absolute; 
-  top:8px; 
-  right:8px; 
-  background: var(--hover-gold); 
-  color: var(--primary-bg); 
-  padding:0.2rem 0.5rem; 
-  font-size:0.8rem; 
-  border-radius:6px; 
-}
+.card h3 { margin-bottom:0.5rem; color: var(--accent-gold); }
+.card p { font-size:0.9rem; color:#ccc; }
+.badge { position:absolute; top:8px; right:8px; background: var(--hover-gold); color: var(--primary-bg); padding:0.2rem 0.5rem; font-size:0.8rem; border-radius:6px; }
 
 /* Profile pic badge on card */
 .card-profile-pic {
-  width:50px;
-  height:50px;
+  width:40px;
+  height:40px;
   border-radius:50%;
   object-fit:cover;
   position:absolute;
@@ -171,92 +92,14 @@ header h1 {
 }
 
 /* Modal */
-.modal { 
-  position:fixed; 
-  top:0; 
-  left:0; 
-  width:100%; 
-  height:100%; 
-  display:none; 
-  justify-content:center; 
-  align-items:flex-start; 
-  background:rgba(0,0,0,0.85); 
-  z-index:100; 
-  padding-top:3rem;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-.modal.fade-in {
-  display: flex;
-  opacity: 1;
-}
-.modal.fade-out {
-  opacity: 0;
-}
-.modal-content { 
-  background: var(--card-bg); 
-  padding:2rem; 
-  border-radius: var(--radius); 
-  max-width:500px; 
-  width:90%; 
-  text-align:center; 
-  position:relative; 
-  color: var(--text-color);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  animation: rise 0.4s ease;
-}
-@keyframes rise {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.close { 
-  position:absolute; 
-  top:10px; 
-  right:15px; 
-  font-size:1.5rem; 
-  cursor:pointer; 
-  color:var(--accent-gold);
-  transition: transform 0.2s ease;
-}
-.close:hover {
-  transform: rotate(90deg);
-}
-.profile-pic { 
-  width:80px; 
-  height:80px; 
-  border-radius:50%; 
-  object-fit:cover; 
-  margin-bottom:1rem; 
-  border:2px solid var(--accent-gold);
-  box-shadow:0 4px 10px rgba(0,0,0,0.6);
-}
-.bubble-links { 
-  display:flex; 
-  justify-content:center; 
-  gap:0.5rem; 
-  margin:1rem 0; 
-  flex-wrap:wrap; 
-}
-.bubble-links a { 
-  background: var(--accent-gold); 
-  color: var(--primary-bg); 
-  padding:0.5rem 0.8rem; 
-  border-radius:8px; 
-  text-decoration:none; 
-  transition: transform var(--transition), background var(--transition);
-  font-weight: 600;
-}
-.bubble-links a:hover { 
-  transform:scale(1.1); 
-  background: var(--hover-gold); 
-}
-.extra-links { 
-  display:flex; 
-  flex-direction:column; 
-  gap:0.5rem; 
-  margin-top:1rem; 
-  perspective:1000px; 
-}
+.modal { position:fixed; top:0; left:0; width:100%; height:100%; display:none; justify-content:center; align-items:flex-start; background:rgba(0,0,0,0.85); z-index:100; padding-top:3rem;}
+.modal-content { background: var(--card-bg); padding:2rem; border-radius: var(--radius); max-width:500px; width:90%; text-align:center; position:relative; color: var(--text-color);}
+.close { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:var(--accent-gold);}
+.profile-pic { width:80px; height:80px; border-radius:50%; object-fit:cover; margin-bottom:1rem; }
+.bubble-links { display:flex; justify-content:center; gap:0.5rem; margin:1rem 0; flex-wrap:wrap; }
+.bubble-links a { background: var(--accent-gold); color: var(--primary-bg); padding:0.5rem 0.8rem; border-radius:8px; text-decoration:none; transition: transform var(--transition); }
+.bubble-links a:hover { transform:scale(1.1); background: var(--hover-gold); }
+.extra-links { display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; perspective:1000px; }
 .extra-links a {
   color: var(--accent-gold);
   text-decoration: none;
@@ -269,46 +112,206 @@ header h1 {
   transition: transform 0.3s, background 0.3s;
 }
 .extra-links a:hover {
-  transform: rotateX(10deg);
+  transform: rotateY(5deg) scale(1.05);
   background: var(--hover-gold);
   color: var(--primary-bg);
 }
 
-/* Utility */
-.empty-msg, .error-msg {
-  text-align: center;
-  padding: 2rem;
-  color: var(--accent-gold);
-  font-size: 1rem;
-}
+footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>MVP Marketplace 🛍️</h1>
-  <input type="text" class="search-bar" placeholder="Search stores...">
-  <div class="categories">
-    <button class="category-btn active">All</button>
-    <button class="category-btn">Fashion</button>
-    <button class="category-btn">Home</button>
-    <button class="category-btn">Beauty</button>
-    <button class="category-btn">Food</button>
-  </div>
-  <a href="#" class="submit-store">+ Submit Store</a>
-  <p class="submit-desc">Share your brand with the community.</p>
+<h1>🏬 Emoji Mall Marketplace</h1>
+<a href="#" class="submit-store">Submit Your Store</a>
+<p class="submit-desc">Add your store to our marketplace in just one click!</p>
+<input type="text" placeholder="Search stores..." class="search-bar" id="searchBar">
+<div class="categories" id="categoriesFilter">
+  <button data-cat="All" class="category-btn active">All</button>
+  <button data-cat="Food" class="category-btn">Food 🍔</button>
+  <button data-cat="Fashion" class="category-btn">Fashion 👗</button>
+  <button data-cat="Tech" class="category-btn">Tech 📱</button>
+</div>
 </header>
 
 <main>
-  <div id="stores-container" class="grid"></div>
+<div class="grid" id="storeGrid"></div>
 </main>
 
-<!-- Modal -->
-<div id="storeModal" class="modal hidden">
-  <div class="modal-content" id="profile-container"></div>
-  <span id="closeModal" class="close">&times;</span>
+<div class="modal" id="storeModal" tabindex="-1">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <div id="profile-container"></div>
+  </div>
 </div>
 
-<script src="app.js"></script>
+<footer>
+<p>MVP Marketplace © 2025</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+// ====================== Embedded JSON ======================
+const storesData = [
+  {
+    "id": 1,
+    "name": "Sneaker Deals",
+    "emoji": "👟",
+    "tagline": "🔥 Weekly drops & discounts",
+    "category": "Fashion",
+    "video_url": "https://www.youtube.com/embed/ScMzIvxBSi4"
+  },
+  {
+    "id": 2,
+    "name": "Local Burgers",
+    "emoji": "🍔",
+    "tagline": "Best street burgers in town",
+    "category": "Food",
+    "video_url": ""
+  },
+  {
+    "id": 3,
+    "name": "Gadget Hub",
+    "emoji": "📱",
+    "tagline": "Latest phones & accessories",
+    "category": "Tech",
+    "video_url": ""
+  }
+];
+
+const profilesData = [
+  {
+    "store_id":1,
+    "profile_pic":"images/sneaker.jpg",
+    "description":"👟 Step into confidence. The latest sneaker drops & discounts crafted to make every step a statement.",
+    "socials":{"whatsapp":"https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg","facebook":"https://facebook.com/sneakerdeals","instagram":"https://instagram.com/sneakerdeals"},
+    "extra_links":[{"title":"🔥 Shop Weekly Drops","url":"https://sneakerdeals.com/shop"},{"title":"⭐ Exclusive Member Offers","url":"https://sneakerdeals.com/vip"}]
+  },
+  {
+    "store_id":2,
+    "profile_pic":"images/burgers.jpg",
+    "description":"🍔 Bite into happiness. Our street burgers bring flavor, comfort, and memories in every mouthful.",
+    "socials":{"whatsapp":"https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg","facebook":"https://facebook.com/localburgers","instagram":"https://instagram.com/localburgers"},
+    "extra_links":[{"title":"🍟 Today’s Specials","url":"https://localburgers.com/specials"},{"title":"📍 Find Us Nearby","url":"https://localburgers.com/location"}]
+  },
+  {
+    "store_id":3,
+    "profile_pic":"images/gadget.jpg",
+    "description":"📱 Live smarter. From phones to accessories, we power your lifestyle with the gadgets you love.",
+    "socials":{"whatsapp":"https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg","facebook":"https://facebook.com/gadgethub","instagram":"https://instagram.com/gadgethub"},
+    "extra_links":[{"title":"⚡ New Tech Arrivals","url":"https://gadgethub.com/new"},{"title":"💡 Smart Living Deals","url":"https://gadgethub.com/deals"}]
+  }
+];
+// ============================================================
+
+let currentCategory = 'All';
+
+// Render store cards
+function renderStores(stores){
+  const grid = document.getElementById('storeGrid');
+  grid.innerHTML='';
+
+  stores.forEach(store=>{
+    const profile = profilesData.find(p => p.store_id === store.id);
+    const card = document.createElement('div');
+    const sizes=['small','medium','large'];
+    card.className=`card ${sizes[Math.floor(Math.random()*sizes.length)]}`;
+    card.dataset.category=store.category;
+    card.dataset.id=store.id;
+
+    card.innerHTML=`
+      ${profile ? `<img src="${profile.profile_pic}" alt="${store.name}" class="card-profile-pic">` : ''}
+      <h3>${store.emoji} ${store.name}</h3>
+      <p>${store.tagline}</p>
+      <span class="badge">${store.emoji}</span>
+    `;
+
+    card.addEventListener('click', ()=>openProfile(store.id));
+    grid.appendChild(card);
+    gsap.from(card,{opacity:0, y:20, duration:0.5, ease:"power2.out"});
+  });
+}
+
+// Open profile modal
+function openProfile(storeId){
+  const store = storesData.find(s=>s.id===storeId);
+  const profile = profilesData.find(p=>p.store_id===storeId);
+  if(!store || !profile) return;
+
+  const container=document.getElementById('profile-container');
+  container.innerHTML=`
+    <img src="${profile.profile_pic}" alt="${store.name}" class="profile-pic">
+    <h2>${store.emoji} ${store.name}</h2>
+    <p class="tagline">${store.tagline}</p>
+    <p class="description">${profile.description}</p>
+
+    <div class="bubble-links">
+      ${profile.socials.whatsapp?`<a href="${profile.socials.whatsapp}" target="_blank">WhatsApp</a>`:""}
+      ${profile.socials.facebook?`<a href="${profile.socials.facebook}" target="_blank">Facebook</a>`:""}
+      ${profile.socials.instagram?`<a href="${profile.socials.instagram}" target="_blank">Instagram</a>`:""}
+    </div>
+
+    <div class="extra-links">
+      ${profile.extra_links.map(l=>`<a href="${l.url}" target="_blank">${l.title}</a>`).join("")}
+    </div>
+
+    ${store.video_url?`<iframe width="100%" height="250" src="${store.video_url}" frameborder="0" allowfullscreen loading="lazy"></iframe>`:""}
+  `;
+
+  const modal=document.getElementById('storeModal');
+  modal.style.display='flex';
+  gsap.from(".modal-content",{scale:0.8, opacity:0, duration:0.4, ease:"back.out(1.7)"});
+
+  // Animate extra links
+  gsap.from(".extra-links a", {
+    y: 50,
+    opacity: 0,
+    rotationX: -15,
+    stagger: 0.1,
+    duration: 0.5,
+    ease: "back.out(1.7)"
+  });
+
+  modal.focus();
+}
+
+// Close modal
+document.getElementById('closeModal').addEventListener('click', ()=>document.getElementById('storeModal').style.display='none');
+window.addEventListener('click', e=>{if(e.target===document.getElementById('storeModal')) document.getElementById('storeModal').style.display='none';});
+window.addEventListener('keydown', e=>{if(e.key==='Escape') document.getElementById('storeModal').style.display='none';});
+
+// Filter function
+function filterCards() {
+  const filterText = document.getElementById('searchBar').value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    const matchesSearch = card.innerText.toLowerCase().includes(filterText);
+    const matchesCategory = (currentCategory === 'All' || card.dataset.category === currentCategory);
+    card.style.display = (matchesSearch && matchesCategory) ? 'flex' : 'none';
+  });
+}
+
+// Search input
+document.getElementById('searchBar').addEventListener('input', filterCards);
+
+// Category buttons
+document.querySelectorAll('.category-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Update active class
+    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Update current category
+    currentCategory = btn.dataset.cat;
+
+    // Filter cards
+    filterCards();
+  });
+});
+
+// Initial render
+renderStores(storesData);
+</script>
+
 </body>
-  </html>
+</html>
