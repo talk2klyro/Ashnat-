@@ -1,114 +1,78 @@
 [
   {
     "store_id": 1,
-    "profile_pic": "images/sneaker.jpg",
-    "description": "👟 Step into confidence. The latest sneaker drops & discounts crafted to make every step a statement.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/sneakerdeals",
-      "instagram": "https://instagram.com/sneakerdeals"
+    "owner_name": "Ahmady Sulaiman",
+    "avatar": "https://i.imgur.com/XtMZ0gb.png",
+    "bio": "Founder of Ahmady Textile, specializing in premium African fabrics and custom clothing. Passionate about local craftsmanship.",
+    "location": "Kano, Nigeria",
+    "contact_number": "+2348123456789",
+    "email": "ahmady.textile@gmail.com",
+    "social_links": {
+      "WhatsApp": "https://wa.me/2348123456789",
+      "Instagram": "https://instagram.com/ahmadytextile",
+      "Facebook": "https://facebook.com/ahmadytextile"
     },
-    "extra_links": [
-      { "title": "🔥 Shop Weekly Drops", "url": "https://sneakerdeals.com/shop" },
-      { "title": "⭐ Exclusive Member Offers", "url": "https://sneakerdeals.com/vip" }
-    ]
+    "rating": 4.9,
+    "views": 214,
+    "clicks": 87,
+    "joined_date": "2023-08-12",
+    "last_active": "2025-10-04T15:32:10Z"
   },
   {
     "store_id": 2,
-    "profile_pic": "images/burgers.jpg",
-    "description": "🍔 Bite into happiness. Our street burgers bring flavor, comfort, and memories in every mouthful.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/localburgers",
-      "instagram": "https://instagram.com/localburgers"
+    "owner_name": "Maryam Yusuf",
+    "avatar": "https://i.imgur.com/8XHkzHn.png",
+    "bio": "Chef and founder of Spice Delight — serving authentic local and continental dishes with a modern twist.",
+    "location": "Lagos, Nigeria",
+    "contact_number": "+2348031122334",
+    "email": "maryam@spicedelight.com",
+    "social_links": {
+      "WhatsApp": "https://wa.me/2348031122334",
+      "Instagram": "https://instagram.com/spicedelight.ng",
+      "TikTok": "https://tiktok.com/@spicedelight"
     },
-    "extra_links": [
-      { "title": "🍟 Today’s Specials", "url": "https://localburgers.com/specials" },
-      { "title": "📍 Find Us Nearby", "url": "https://localburgers.com/location" }
-    ]
+    "rating": 4.7,
+    "views": 142,
+    "clicks": 61,
+    "joined_date": "2024-02-25",
+    "last_active": "2025-10-05T08:47:55Z"
   },
   {
     "store_id": 3,
-    "profile_pic": "images/gadget.jpg",
-    "description": "📱 Live smarter. From phones to accessories, we power your lifestyle with the gadgets you love.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/gadgethub",
-      "instagram": "https://instagram.com/gadgethub"
+    "owner_name": "Emmanuel Techie",
+    "avatar": "https://i.imgur.com/0Ur4FvS.png",
+    "bio": "Founder of TechTribe — a WhatsApp community for young innovators and tech enthusiasts. Building Africa’s next generation of developers.",
+    "location": "Abuja, Nigeria",
+    "contact_number": "+2349095566778",
+    "email": "info@techtribe.africa",
+    "social_links": {
+      "WhatsApp": "https://wa.me/2349095566778",
+      "LinkedIn": "https://linkedin.com/company/techtribeafrica",
+      "Twitter": "https://x.com/techtribeafrica"
     },
-    "extra_links": [
-      { "title": "⚡ New Tech Arrivals", "url": "https://gadgethub.com/new" },
-      { "title": "💡 Smart Living Deals", "url": "https://gadgethub.com/deals" }
-    ]
+    "rating": 4.8,
+    "views": 386,
+    "clicks": 195,
+    "joined_date": "2022-11-14",
+    "last_active": "2025-10-05T09:10:41Z"
   },
   {
     "store_id": 4,
-    "profile_pic": "images/fashion.jpg",
-    "description": "👗 Dress to impress. Fresh styles weekly so you always look as good as you feel.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/fashiontrends",
-      "instagram": "https://instagram.com/fashiontrends"
+    "owner_name": "Zainab Bello",
+    "avatar": "https://i.imgur.com/NugrfqS.png",
+    "bio": "Designer at Fashion Forward — curating modern African fashion trends, connecting creators and stylists across the continent.",
+    "location": "Ibadan, Nigeria",
+    "contact_number": "+2348029988776",
+    "email": "hello@fashionforward.africa",
+    "social_links": {
+      "WhatsApp": "https://wa.me/2348029988776",
+      "Instagram": "https://instagram.com/fashionforward.africa",
+      "Pinterest": "https://pinterest.com/fashionforward"
     },
-    "extra_links": [
-      { "title": "✨ New Arrivals", "url": "https://fashiontrends.com/new" },
-      { "title": "🎁 Seasonal Collections", "url": "https://fashiontrends.com/season" }
-    ]
-  },
-  {
-    "store_id": 5,
-    "profile_pic": "images/books.jpg",
-    "description": "📚 Unlock knowledge. From guides to ebooks, empower your journey with stories that stay forever.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/bookcorner",
-      "instagram": "https://instagram.com/bookcorner"
-    },
-    "extra_links": [
-      { "title": "📖 Browse Library", "url": "https://bookcorner.com/library" },
-      { "title": "🧠 Learning Paths", "url": "https://bookcorner.com/learn" }
-    ]
-  },
-  {
-    "store_id": 6,
-    "profile_pic": "images/farm.jpg",
-    "description": "🌾 Nature’s best on your plate. Farm-fresh food that nourishes your health and soul.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/farmfresh",
-      "instagram": "https://instagram.com/farmfresh"
-    },
-    "extra_links": [
-      { "title": "🥦 Organic Picks", "url": "https://farmfresh.com/organic" },
-      { "title": "🚚 Weekly Deliveries", "url": "https://farmfresh.com/delivery" }
-    ]
-  },
-  {
-    "store_id": 7,
-    "profile_pic": "images/beauty.jpg",
-    "description": "💄 Confidence starts here. Skincare & cosmetics to let your natural glow shine every day.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/beautyglow",
-      "instagram": "https://instagram.com/beautyglow"
-    },
-    "extra_links": [
-      { "title": "💅 Beauty Must-Haves", "url": "https://beautyglow.com/must" },
-      { "title": "🎉 Discounts & Combos", "url": "https://beautyglow.com/deals" }
-    ]
-  },
-  {
-    "store_id": 8,
-    "profile_pic": "images/art.jpg",
-    "description": "🎨 Bring walls to life. Creative art pieces that add color, depth, and emotion to your world.",
-    "socials": {
-      "whatsapp": "https://chat.whatsapp.com/IS2Gtxs4QecEbjk8CHPeIg",
-      "facebook": "https://facebook.com/abstractarts",
-      "instagram": "https://instagram.com/abstractarts"
-    },
-    "extra_links": [
-      { "title": "🖼️ Gallery", "url": "https://abstractarts.com/gallery" },
-      { "title": "🎨 Custom Orders", "url": "https://abstractarts.com/custom" }
-    ]
+    "rating": 4.6,
+    "views": 163,
+    "clicks": 79,
+    "joined_date": "2024-07-02",
+    "last_active": "2025-10-05T07:55:12Z"
   }
 ]
