@@ -1,34 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Storvia Marketplace</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVP Marketplace - Live Analytics</title>
+
+<style>
+:root {
+  --primary-bg: #1C1C1C;
+  --card-bg: #2C2C2C;
+  --accent-gold: #FFD700;
+  --hover-gold: #E9C46A;
+  --text-color: #F5F5F5;
+  --shadow: 0 4px 12px rgba(0,0,0,0.5);
+  --radius: 12px;
+  --transition: 0.3s;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+}
+header {
+  text-align:center;
+  padding:2rem 1rem 1rem 1rem;
+  background: var(--card-bg);
+  border-bottom:2px solid var(--accent-gold);
+}
+header h1 { margin-bottom:0.5rem; color: var(--accent-gold);}
+.submit-store {
+  display:inline-block;
+  background: var(--accent-gold);
+  color: var(--primary-bg);
+  padding:0.75rem 1.5rem;
+  border-radius: var(--radius);
+  margin-top:1rem;
+  cursor:pointer;
+  font-weight:bold;
+  text-decoration:none;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.submit-store:hover { transform: scale(1.05); box-shadow:0 0 12px var(--hover-gold);}
+.submit-desc { margin-top:0.5rem; font-size:0.9rem; color:#ccc; }
+.search-bar {
+  display:block; margin:1rem auto;
+  max-width:400px; padding:0.5rem 1rem;
+  border-radius:8px; border:1px solid var(--text-color);
+  background:#222; color:#fff;
+}
+
+/* Categories */
+.categories { display:flex; justify-content:center; gap:0.5rem; margin:1rem 0; flex-wrap:wrap; }
+.category-btn {
+  background: var(--card-bg);
+  border:none; padding:0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor:pointer; color:var(--text-color);
+  transition: transform var(--transition), background var(--transition);
+}
+.category-btn:hover { transform:scale(1.05); background: var(--hover-gold); color: var(--primary-bg);}
+.category-btn.active { background: var(--accent-gold); color: var(--primary-bg); }
+
+/* Grid / Cards */
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; padding:1rem; }
+.card {
+  background: var(--card-bg); border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:1rem; cursor:pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  color: var(--text-color); position:relative;
+}
+.card:hover { transform:translateY(-5px) scale(1.03); box-shadow:0 8px 20px rgba(255,215,0,0.5);}
+.card h3 { margin-bottom:0.5rem; color: var(--accent-gold); }
+.card p { font-size:0.9rem; color:#ccc; }
+.badge { position:absolute; top:8px; right:8px; background: var(--hover-gold); color: var(--primary-bg); padding:0.2rem 0.5rem; font-size:0.8rem; border-radius:6px; }
+
+/* Modal */
+.modal { position:fixed; top:0; left:0; width:100%; height:100%; display:none; justify-content:center; align-items:flex-start; background:rgba(0,0,0,0.85); z-index:100; padding-top:3rem;}
+.modal-content {
+  background: var(--card-bg); padding:2rem; border-radius: var(--radius);
+  max-width:550px; width:90%; text-align:center; position:relative; color: var(--text-color);
+}
+.close { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:var(--accent-gold);}
+.profile-card {
+  display:flex; flex-direction:column; align-items:center;
+  margin-bottom:1rem; background:#222; padding:1rem;
+  border-radius:var(--radius); box-shadow:0 0 8px rgba(255,215,0,0.1);
+}
+.profile-card img {
+  width:80px; height:80px; border-radius:50%; margin-bottom:0.5rem;
+  border:2px solid var(--accent-gold);
+}
+.profile-card h4 { margin-bottom:0.3rem; color:var(--accent-gold); }
+.profile-card p { font-size:0.85rem; color:#aaa; margin-bottom:0.5rem; }
+.profile-stats {
+  display:flex; justify-content:center; gap:1rem; font-size:0.85rem; color:#ccc;
+}
+.profile-stats span { display:flex; flex-direction:column; align-items:center; }
+.links-container {
+  display:flex; justify-content:center; align-items:flex-start;
+  margin-top:1.5rem; gap:1rem; flex-wrap:wrap;
+}
+.link-card {
+  background: var(--accent-gold); color:var(--primary-bg);
+  padding:0.75rem 1rem; border-radius:10px; min-width:100px; text-align:center;
+  cursor:pointer; transition: transform 0.3s; flex-shrink:0; text-decoration:none; position:relative;
+}
+.link-card:hover { transform: scale(1.1); background: var(--hover-gold); color:var(--primary-bg);}
+.link-card::after {
+  content: attr(data-preview); position:absolute; bottom:120%; left:50%;
+  transform:translateX(-50%); background:#222; color:var(--accent-gold);
+  padding:0.4rem 0.6rem; border-radius:6px; font-size:0.75rem; white-space:nowrap;
+  opacity:0; pointer-events:none; transition:opacity 0.25s;
+}
+.link-card:hover::after { opacity:1;}
+
+footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
+</style>
 </head>
 <body>
-  <header>
-    <h1>🛍️ Storvia Marketplace</h1>
-  </header>
 
-  <main>
-    <section id="stores-container" class="stores-grid"></section>
-  </main>
-
-  <!-- Modal View -->
-  <div id="storeModal" class="modal hidden">
-    <div class="modal-content">
-      <span id="closeModal" class="close-btn">&times;</span>
-      <div id="profile-container"></div>
-    </div>
+<header>
+  <h1>🏬 Emoji Mall Marketplace</h1>
+  <a href="#" class="submit-store">Submit Your Store</a>
+  <p class="submit-desc">Add your store to our marketplace in just one click!</p>
+  <input type="text" placeholder="Search stores..." class="search-bar" id="searchBar">
+  <div class="categories" id="categoriesFilter">
+    <button data-cat="All" class="category-btn active">All</button>
+    <button data-cat="Textiles" class="category-btn">Textiles 🧵</button>
+    <button data-cat="Fashion" class="category-btn">Fashion 👗</button>
   </div>
+</header>
 
-  <!-- Slide-up Page View (for future) -->
-  <div id="slidePage" class="slide-page hidden">
-    <button id="closePage" class="back-btn">← Back</button>
-    <div id="page-content"></div>
+<main>
+  <div class="grid" id="storeGrid"></div>
+</main>
+
+<div class="modal" id="storeModal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <div id="profileCard"></div>
+    <h2 id="modalTitle"></h2>
+    <p id="modalTagline"></p>
+    <div id="modalVideo"></div>
+    <div id="modalLinks" class="links-container"></div>
   </div>
+</div>
 
-  <script src="app.js"></script>
+<footer><p>MVP Marketplace © 2025</p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+let stores = [];
+let profiles = [];
+
+// --- Load Data ---
+async function loadData() {
+  try {
+    const [storesRes, profilesRes] = await Promise.all([
+      fetch('stores.json'),
+      fetch('profiles.json')
+    ]);
+    stores = await storesRes.json();
+    profiles = await profilesRes.json();
+
+    // Load from localStorage
+    const savedData = JSON.parse(localStorage.getItem('storeMetrics')) || {};
+    stores.forEach(s => {
+      if(savedData[s.id]) {
+        s.clicks = savedData[s.id].clicks;
+        s.views = savedData[s.id].views;
+      }
+    });
+
+    renderStores();
+  } catch (e) {
+    console.error("Error loading data:", e);
+  }
+}
+
+// --- Render Cards ---
+function renderStores() {
+  const grid = document.getElementById('storeGrid');
+  grid.innerHTML = '';
+  stores.forEach(store => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.category = store.category;
+    card.innerHTML = `<h3>${store.emoji} ${store.name}</h3><p>${store.tagline}</p><span class="badge">${store.rating}⭐</span>`;
+    card.onclick = () => openModal(store);
+    grid.appendChild(card);
+    gsap.from(card, {opacity:0, y:20, duration:0.5, ease:"power2.out"});
+  });
+}
+
+// --- Modal with Profile ---
+function openModal(store) {
+  const modal = document.getElementById('storeModal');
+  const profile = profiles.find(p => p.store_id === store.id);
+  store.views++;
+  updateLocalStorage();
+
+  document.getElementById('modalTitle').innerText = `${store.emoji} ${store.name}`;
+  document.getElementById('modalTagline').innerText = store.tagline;
+  document.getElementById('modalVideo').innerHTML = store.video_url
+    ? `<iframe width="100%" height="250" src="${store.video_url}" frameborder="0" allowfullscreen loading="lazy"></iframe>`
+    : '';
+
+  const linksContainer = document.getElementById('modalLinks');
+  linksContainer.innerHTML = '';
+  if (store.links) {
+    for (let [key, linkObj] of Object.entries(store.links)) {
+      const linkCard = document.createElement('a');
+      linkCard.className = 'link-card';
+      linkCard.href = linkObj.url;
+      linkCard.target = '_blank';
+      linkCard.innerText = key;
+      linkCard.dataset.preview = linkObj.preview || '';
+      linkCard.onclick = () => {
+        store.clicks++;
+        updateLocalStorage();
+      };
+      linksContainer.appendChild(linkCard);
+    }
+  }
+
+  if (profile) {
+    document.getElementById('profileCard').innerHTML = `
+      <div class="profile-card">
+        <img src="${profile.avatar}" alt="${profile.owner_name}">
+        <h4>${profile.owner_name}</h4>
+        <p>${profile.bio}</p>
+        <div class="profile-stats">
+          <span>⭐ ${store.rating}</span>
+          <span>👁️ ${store.views}</span>
+          <span>🖱️ ${store.clicks}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  modal.style.display = 'flex';
+  gsap.from(".modal-content",{scale:0.8, opacity:0, duration:0.4, ease:"back.out(1.7)"});
+}
+
+// --- Local Storage Update ---
+function updateLocalStorage() {
+  const data = {};
+  stores.forEach(s => data[s.id] = {clicks: s.clicks, views: s.views});
+  localStorage.setItem('storeMetrics', JSON.stringify(data));
+}
+
+// --- Modal Controls ---
+const modal = document.getElementById('storeModal');
+document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+window.onclick = e => { if(e.target === modal) modal.style.display = 'none'; };
+window.onkeydown = e => { if(e.key === 'Escape') modal.style.display = 'none'; };
+
+// --- Search + Filter ---
+document.getElementById('searchBar').oninput = e => {
+  const filter = e.target.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(filter) ? '' : 'none';
+  });
+};
+document.querySelectorAll('.category-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.display = (cat === 'All' || card.dataset.category === cat) ? '' : 'none';
+    });
+  };
+});
+
+loadData();
+</script>
 </body>
-</html>
+  </html>
