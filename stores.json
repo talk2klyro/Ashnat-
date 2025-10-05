@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmady Textile",
+    "emoji": "🧵",
+    "tagline": "Touch luxury. Feel confidence. 👑",
+    "category": "Textiles",
+    "description": "Discover premium Shadda and high-quality fabric collections that redefine elegance. Perfect for custom tailoring and fashion excellence.",
+    "color_theme": "#d3b88c",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1608259180946-9a7a68f5db23?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t",
+        "preview": "Chat with our textile experts on WhatsApp!"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/ahmadytextile",
+        "preview": "Follow our latest fabric trends on Facebook"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/ahmadytextile",
+        "preview": "Explore our premium collections on Instagram"
+      }
+    },
+    "rating": 4.9,
+    "clicks": 324,
+    "views": 1210,
+    "joined_date": "2024-06-10",
+    "last_active": "2025-10-05T18:12:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Ummu Ahlam Collections",
+    "emoji": "👗",
+    "tagline": "Dress the way you dream 🌙",
+    "category": "Fashion",
+    "description": "Elegant traditional attires handcrafted with passion. Each design tells a story of beauty, modesty, and modern confidence.",
+    "color_theme": "#e1a0b3",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1556906781-9c6a2a1a1f6b?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c",
+        "preview": "Shop directly on WhatsApp ✨"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/ummuahlamcollections",
+        "preview": "Discover our lookbooks on Facebook"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/ummuahlamcollections",
+        "preview": "Follow us on Instagram for style updates"
+      }
+    },
+    "rating": 4.7,
+    "clicks": 289,
+    "views": 987,
+    "joined_date": "2023-11-25",
+    "last_active": "2025-10-05T18:08:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Herssey Collection",
+    "emoji": "💄",
+    "tagline": "Confidence you can wear 💋",
+    "category": "Fashion",
+    "description": "Modern designs with timeless charm. From casual chic to royal glam — own every moment in Herssey style.",
+    "color_theme": "#f2c4c4",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1602810318383-e56efb825c9b?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t",
+        "preview": "DM us on WhatsApp for exclusive drops 💬"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/hersseycollection",
+        "preview": "Join our Facebook community for style news"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/hersseycollection",
+        "preview": "Follow our Instagram for fashion inspo"
+      }
+    },
+    "rating": 4.8,
+    "clicks": 405,
+    "views": 1335,
+    "joined_date": "2024-03-01",
+    "last_active": "2025-10-05T17:58:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Didi's Home of Attires",
+    "emoji": "🏠",
+    "tagline": "Home of beauty, made for you 💞",
+    "category": "Fashion",
+    "description": "Your one-stop destination for luxury attires — crafted to inspire elegance and designed for everyday queens.",
+    "color_theme": "#c5a5ff",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1606761568499-6b47aa5a07a0?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix",
+        "preview": "Message us to explore our latest arrivals 💬"
+      },
+      "Facebook": {
+        "url": "https://facebook.com/didishome",
+        "preview": "Like our page for new fashion arrivals"
+      },
+      "Instagram": {
+        "url": "https://instagram.com/didishomeofattires",
+        "preview": "Follow us on Instagram for luxury looks"
+      }
+    },
+    "rating": 4.6,
+    "clicks": 237,
+    "views": 840,
+    "joined_date": "2024-09-02",
+    "last_active": "2025-10-05T17:45:00Z"
+  }
+        ]
