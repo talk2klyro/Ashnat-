@@ -1,282 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Storvia Marketplace</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emoji Mall Marketplace</title>
 
 <style>
 :root {
-  --primary-bg: #1C1C1C;
-  --card-bg: #2C2C2C;
-  --accent-gold: #FFD700;
-  --hover-gold: #E9C46A;
-  --text-color: #F5F5F5;
-  --shadow: 0 4px 12px rgba(0,0,0,0.5);
+  --primary-bg: #1c1c1c;
+  --card-bg: #2c2c2c;
+  --accent-gold: #ffd700;
+  --hover-gold: #e9c46a;
+  --text-color: #f5f5f5;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   --radius: 12px;
   --transition: 0.3s;
 }
-
-* { box-sizing:border-box; margin:0; padding:0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: "Poppins", Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: var(--primary-bg);
   color: var(--text-color);
 }
+
+/* Header */
 header {
-  text-align:center;
-  padding:2rem 1rem 1rem 1rem;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
   background: var(--card-bg);
-  border-bottom:2px solid var(--accent-gold);
+  border-bottom: 2px solid var(--accent-gold);
 }
-header h1 { margin-bottom:0.5rem; color: var(--accent-gold);}
+header h1 { margin-bottom: 0.5rem; color: var(--accent-gold); font-weight: 700; }
 .submit-store {
-  display:inline-block;
+  display: inline-block;
   background: var(--accent-gold);
   color: var(--primary-bg);
-  padding:0.75rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: var(--radius);
-  margin-top:1rem;
-  cursor:pointer;
-  font-weight:bold;
-  text-decoration:none;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.submit-store:hover { transform: scale(1.05); box-shadow:0 0 12px var(--hover-gold);}
-.submit-desc { margin-top:0.5rem; font-size:0.9rem; color:#ccc; }
+.submit-store:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--hover-gold);
+}
 .search-bar {
-  display:block; margin:1rem auto;
-  max-width:400px; padding:0.5rem 1rem;
-  border-radius:8px; border:1px solid var(--text-color);
-  background:#222; color:#fff;
+  display: block;
+  margin: 1rem auto;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--text-color);
+  background: #222;
+  color: #fff;
 }
 
 /* Categories */
-.categories { display:flex; justify-content:center; gap:0.5rem; margin:1rem 0; flex-wrap:wrap; }
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
 .category-btn {
   background: var(--card-bg);
-  border:none; padding:0.5rem 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius);
-  cursor:pointer; color:var(--text-color);
+  cursor: pointer;
+  color: var(--text-color);
   transition: transform var(--transition), background var(--transition);
 }
-.category-btn:hover { transform:scale(1.05); background: var(--hover-gold); color: var(--primary-bg);}
-.category-btn.active { background: var(--accent-gold); color: var(--primary-bg); }
-
-/* Grid / Cards */
-.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; padding:1rem; }
-.card {
-  background: var(--card-bg); border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-  text-align:center; padding:1rem; cursor:pointer;
-  transition: transform var(--transition), box-shadow var(--transition);
-  color: var(--text-color); position:relative;
+.category-btn:hover {
+  transform: scale(1.05);
+  background: var(--hover-gold);
+  color: var(--primary-bg);
 }
-.card:hover { transform:translateY(-5px) scale(1.03); box-shadow:0 8px 20px rgba(255,215,0,0.5);}
-.card h3 { margin-bottom:0.5rem; color: var(--accent-gold); }
-.card p { font-size:0.9rem; color:#ccc; }
-.badge { position:absolute; top:8px; right:8px; background: var(--hover-gold); color: var(--primary-bg); padding:0.2rem 0.5rem; font-size:0.8rem; border-radius:6px; }
+.category-btn.active {
+  background: var(--accent-gold);
+  color: var(--primary-bg);
+}
+
+/* Store Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+  padding: 1rem;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+.card h3 { margin-bottom: 0.5rem; color: var(--accent-gold); }
+.card p { font-size: 0.9rem; color: #ccc; }
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--hover-gold);
+  color: var(--primary-bg);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
 
 /* Modal */
-.modal { position:fixed; top:0; left:0; width:100%; height:100%; display:none; justify-content:center; align-items:flex-start; background:rgba(0,0,0,0.85); z-index:100; padding-top:3rem;}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 100;
+  padding-top: 3rem;
+}
 .modal-content {
-  background: var(--card-bg); padding:2rem; border-radius: var(--radius);
-  max-width:550px; width:90%; text-align:center; position:relative; color: var(--text-color);
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  max-width: 520px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  color: var(--text-color);
 }
-.close { position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:var(--accent-gold);}
-.profile-card {
-  display:flex; flex-direction:column; align-items:center;
-  margin-bottom:1rem; background:#222; padding:1rem;
-  border-radius:var(--radius); box-shadow:0 0 8px rgba(255,215,0,0.1);
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent-gold);
 }
-.profile-card img {
-  width:80px; height:80px; border-radius:50%; margin-bottom:0.5rem;
-  border:2px solid var(--accent-gold);
-}
-.profile-card h4 { margin-bottom:0.3rem; color:var(--accent-gold); }
-.profile-card p { font-size:0.85rem; color:#aaa; margin-bottom:0.5rem; }
-.profile-stats {
-  display:flex; justify-content:center; gap:1rem; font-size:0.85rem; color:#ccc;
-}
-.profile-stats span { display:flex; flex-direction:column; align-items:center; }
 .links-container {
-  display:flex; justify-content:center; align-items:flex-start;
-  margin-top:1.5rem; gap:1rem; flex-wrap:wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 .link-card {
-  background: var(--accent-gold); color:var(--primary-bg);
-  padding:0.75rem 1rem; border-radius:10px; min-width:100px; text-align:center;
-  cursor:pointer; transition: transform 0.3s; flex-shrink:0; text-decoration:none; position:relative;
+  background: var(--accent-gold);
+  color: var(--primary-bg);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.3s;
+  position: relative;
 }
-.link-card:hover { transform: scale(1.1); background: var(--hover-gold); color:var(--primary-bg);}
-.link-card::after {
-  content: attr(data-preview); position:absolute; bottom:120%; left:50%;
-  transform:translateX(-50%); background:#222; color:var(--accent-gold);
-  padding:0.4rem 0.6rem; border-radius:6px; font-size:0.75rem; white-space:nowrap;
-  opacity:0; pointer-events:none; transition:opacity 0.25s;
+.link-card:hover {
+  transform: scale(1.1);
+  background: var(--hover-gold);
 }
-.link-card:hover::after { opacity:1;}
 
-footer { text-align:center; padding:1rem; font-size:0.9rem; color:#ccc; }
+/* Profile Section */
+.profile-card {
+  background: #202020;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+.profile-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+}
+.profile-info h4 {
+  color: var(--accent-gold);
+  margin-bottom: 0.2rem;
+}
+.profile-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
 </style>
 </head>
-<body>
 
+<body>
 <header>
-  <h1>🏬 Storvia Marketplace</h1>
+  <h1>🏬 Emoji Mall Marketplace</h1>
   <a href="#" class="submit-store">Submit Your Store</a>
-  <p class="submit-desc">Add your WhatsApp Business Group/Channel Links to our marketplace in just one click!</p>
-  <input type="text" placeholder="Search stores..." class="search-bar" id="searchBar">
+  <input type="text" placeholder="Search stores..." id="searchBar" class="search-bar" />
   <div class="categories" id="categoriesFilter">
     <button data-cat="All" class="category-btn active">All</button>
-    <button data-cat="Textiles" class="category-btn">Textiles 🧵</button>
     <button data-cat="Fashion" class="category-btn">Fashion 👗</button>
+    <button data-cat="Food" class="category-btn">Food 🍔</button>
+    <button data-cat="Textiles" class="category-btn">Textiles 🧵</button>
+    <button data-cat="Graphics" class="category-btn">Graphics 🎨</button>
   </div>
 </header>
 
-<main>
-  <div class="grid" id="storeGrid"></div>
-</main>
+<main><div class="grid" id="storeGrid"></div></main>
 
 <div class="modal" id="storeModal">
   <div class="modal-content">
     <span class="close" id="closeModal">&times;</span>
-    <div id="profileCard"></div>
     <h2 id="modalTitle"></h2>
     <p id="modalTagline"></p>
     <div id="modalVideo"></div>
     <div id="modalLinks" class="links-container"></div>
+    <div id="profileCard" class="profile-card" style="display:none;"></div>
   </div>
 </div>
 
-<footer><p>Storvia Marketplace © 2025</p></footer>
+<footer><p>© 2025 Emoji Mall Marketplace</p></footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 let stores = [];
 let profiles = [];
 
-// --- Load Data ---
 async function loadData() {
-  try {
-    const [storesRes, profilesRes] = await Promise.all([
-      fetch('stores.json'),
-      fetch('profiles.json')
-    ]);
-    stores = await storesRes.json();
-    profiles = await profilesRes.json();
-
-    // Load from localStorage
-    const savedData = JSON.parse(localStorage.getItem('storeMetrics')) || {};
-    stores.forEach(s => {
-      if(savedData[s.id]) {
-        s.clicks = savedData[s.id].clicks;
-        s.views = savedData[s.id].views;
-      }
-    });
-
-    renderStores();
-  } catch (e) {
-    console.error("Error loading data:", e);
-  }
+  const [storesRes, profilesRes] = await Promise.all([
+    fetch('stores.json'),
+    fetch('profiles.json')
+  ]);
+  stores = await storesRes.json();
+  profiles = await profilesRes.json();
+  renderStores(stores);
 }
 
-// --- Render Cards ---
-function renderStores() {
+function renderStores(list) {
   const grid = document.getElementById('storeGrid');
   grid.innerHTML = '';
-  stores.forEach(store => {
+  list.forEach(store => {
     const card = document.createElement('div');
     card.className = 'card';
     card.dataset.category = store.category;
-    card.innerHTML = `<h3>${store.emoji} ${store.name}</h3><p>${store.tagline}</p><span class="badge">${store.rating}⭐</span>`;
-    card.onclick = () => openModal(store);
+    card.innerHTML = `
+      <h3>${store.emoji} ${store.name}</h3>
+      <p>${store.tagline}</p>
+      <span class="badge">${store.category}</span>`;
+    card.addEventListener('click', () => openModal(store.id));
     grid.appendChild(card);
-    gsap.from(card, {opacity:0, y:20, duration:0.5, ease:"power2.out"});
+    gsap.from(card, { opacity: 0, y: 20, duration: 0.4 });
   });
 }
 
-// --- Modal with Profile ---
-function openModal(store) {
-  const modal = document.getElementById('storeModal');
-  const profile = profiles.find(p => p.store_id === store.id);
-  store.views++;
-  updateLocalStorage();
+function openModal(id) {
+  const store = stores.find(s => s.id === id);
+  const profile = profiles.find(p => p.store_id === id);
+  if (!store) return;
 
   document.getElementById('modalTitle').innerText = `${store.emoji} ${store.name}`;
   document.getElementById('modalTagline').innerText = store.tagline;
-  document.getElementById('modalVideo').innerHTML = store.video_url
-    ? `<iframe width="100%" height="250" src="${store.video_url}" frameborder="0" allowfullscreen loading="lazy"></iframe>`
-    : '';
-
-  const linksContainer = document.getElementById('modalLinks');
-  linksContainer.innerHTML = '';
-  if (store.links) {
-    for (let [key, linkObj] of Object.entries(store.links)) {
-      const linkCard = document.createElement('a');
-      linkCard.className = 'link-card';
-      linkCard.href = linkObj.url;
-      linkCard.target = '_blank';
-      linkCard.innerText = key;
-      linkCard.dataset.preview = linkObj.preview || '';
-      linkCard.onclick = () => {
-        store.clicks++;
-        updateLocalStorage();
-      };
-      linksContainer.appendChild(linkCard);
-    }
+  
+  const linksDiv = document.getElementById('modalLinks');
+  linksDiv.innerHTML = '';
+  for (let key in store.links) {
+    const link = store.links[key];
+    const a = document.createElement('a');
+    a.href = link.url;
+    a.target = '_blank';
+    a.className = 'link-card';
+    a.innerText = key;
+    a.dataset.preview = link.preview;
+    a.onclick = () => trackClick(id);
+    linksDiv.appendChild(a);
   }
 
+  // Profile section
+  const profileDiv = document.getElementById('profileCard');
   if (profile) {
-    document.getElementById('profileCard').innerHTML = `
-      <div class="profile-card">
-        <img src="${profile.avatar}" alt="${profile.owner_name}">
+    profileDiv.style.display = 'flex';
+    profileDiv.innerHTML = `
+      <img src="${profile.avatar_url}" alt="${profile.owner_name}" />
+      <div class="profile-info">
         <h4>${profile.owner_name}</h4>
-        <p>${profile.bio}</p>
+        <p>${profile.role}</p>
         <div class="profile-stats">
-          <span>⭐ ${store.rating}</span>
-          <span>👁️ ${store.views}</span>
-          <span>🖱️ ${store.clicks}</span>
+          <span>⭐ ${profile.rating}</span>
+          <span>👁️ ${profile.total_views}</span>
+          <span>🔥 ${profile.total_clicks}</span>
         </div>
-      </div>
-    `;
-  }
+      </div>`;
+  } else profileDiv.style.display = 'none';
 
+  const modal = document.getElementById('storeModal');
   modal.style.display = 'flex';
-  gsap.from(".modal-content",{scale:0.8, opacity:0, duration:0.4, ease:"back.out(1.7)"});
+  gsap.from('.modal-content', { scale: 0.8, opacity: 0, duration: 0.4, ease: 'back.out(1.7)' });
 }
 
-// --- Local Storage Update ---
-function updateLocalStorage() {
-  const data = {};
-  stores.forEach(s => data[s.id] = {clicks: s.clicks, views: s.views});
-  localStorage.setItem('storeMetrics', JSON.stringify(data));
+function trackClick(id) {
+  const store = stores.find(s => s.id === id);
+  const profile = profiles.find(p => p.store_id === id);
+  if (store) store.clicks = (store.clicks || 0) + 1;
+  if (profile) profile.total_clicks = (profile.total_clicks || 0) + 1;
+  console.log(`Store ${id} clicked. Total clicks: ${store?.clicks}`);
 }
 
-// --- Modal Controls ---
-const modal = document.getElementById('storeModal');
-document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
-window.onclick = e => { if(e.target === modal) modal.style.display = 'none'; };
-window.onkeydown = e => { if(e.key === 'Escape') modal.style.display = 'none'; };
-
-// --- Search + Filter ---
-document.getElementById('searchBar').oninput = e => {
-  const filter = e.target.value.toLowerCase();
-  document.querySelectorAll('.card').forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(filter) ? '' : 'none';
-  });
+document.getElementById('closeModal').onclick = () => {
+  document.getElementById('storeModal').style.display = 'none';
 };
+window.onclick = e => {
+  if (e.target === document.getElementById('storeModal'))
+    document.getElementById('storeModal').style.display = 'none';
+};
+document.getElementById('searchBar').addEventListener('input', e => {
+  const term = e.target.value.toLowerCase();
+  document.querySelectorAll('.card').forEach(c => {
+    c.style.display = c.innerText.toLowerCase().includes(term) ? '' : 'none';
+  });
+});
 document.querySelectorAll('.category-btn').forEach(btn => {
-  btn.onclick = () => {
+  btn.addEventListener('click', () => {
     document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const cat = btn.dataset.cat;
     document.querySelectorAll('.card').forEach(card => {
       card.style.display = (cat === 'All' || card.dataset.category === cat) ? '' : 'none';
     });
-  };
+  });
 });
 
 loadData();
