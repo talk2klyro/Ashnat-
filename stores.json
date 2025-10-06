@@ -14,14 +14,6 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/IgMVPhcLvZD30rR11NuaeX?mode=ems_copy_t",
         "preview": "Chat with our textile experts on WhatsApp!"
-      },
-      "Facebook": {
-        "url": "https://facebook.com/ahmadytextile",
-        "preview": "Follow our latest fabric trends on Facebook"
-      },
-      "Instagram": {
-        "url": "https://instagram.com/ahmadytextile",
-        "preview": "Explore our premium collections on Instagram"
       }
     },
     "rating": 4.9,
@@ -45,14 +37,6 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/F2PFKG7GIa28ld3V2V49Ro?mode=ems_wa_c",
         "preview": "Shop directly on WhatsApp ✨"
-      },
-      "Facebook": {
-        "url": "https://facebook.com/ummuahlamcollections",
-        "preview": "Discover our lookbooks on Facebook"
-      },
-      "Instagram": {
-        "url": "https://instagram.com/ummuahlamcollections",
-        "preview": "Follow us on Instagram for style updates"
       }
     },
     "rating": 4.7,
@@ -76,14 +60,6 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/Kvrz3H6FpE77Ivaz2S9uVy?mode=ems_wa_t",
         "preview": "DM us on WhatsApp for exclusive drops 💬"
-      },
-      "Facebook": {
-        "url": "https://facebook.com/hersseycollection",
-        "preview": "Join our Facebook community for style news"
-      },
-      "Instagram": {
-        "url": "https://instagram.com/hersseycollection",
-        "preview": "Follow our Instagram for fashion inspo"
       }
     },
     "rating": 4.8,
@@ -107,14 +83,6 @@
       "WhatsApp": {
         "url": "https://chat.whatsapp.com/COwfwICtfwZCqErDXyjhix",
         "preview": "Message us to explore our latest arrivals 💬"
-      },
-      "Facebook": {
-        "url": "https://facebook.com/didishome",
-        "preview": "Like our page for new fashion arrivals"
-      },
-      "Instagram": {
-        "url": "https://instagram.com/didishomeofattires",
-        "preview": "Follow us on Instagram for luxury looks"
       }
     },
     "rating": 4.6,
@@ -122,5 +90,373 @@
     "views": 840,
     "joined_date": "2024-09-02",
     "last_active": "2025-10-05T17:45:00Z"
+  },
+  {
+    "id": 5,
+    "name": "MMN Khalid Online Business",
+    "emoji": "💼",
+    "tagline": "Everything fresh, everything affordable 🌟",
+    "category": "Business",
+    "description": "We bring you both brand new and second-hand items at unbeatable prices. Whether you’re buying one or in bulk, we welcome you warmly!",
+    "color_theme": "#b6c8a9",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1607082349566-18734258a8b1?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/F1CwEPLM0j1HvMe9RVLzni?mode=ems_copy_t",
+        "preview": "Chat with our sellers directly on WhatsApp 💬"
+      }
+    },
+    "rating": 4.5,
+    "clicks": 178,
+    "views": 652,
+    "joined_date": "2025-01-12",
+    "last_active": "2025-10-05T18:30:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Gidan Hausa Novel",
+    "emoji": "📚",
+    "tagline": "Where stories live and hearts connect 💬",
+    "category": "Entertainment",
+    "description": "A peaceful Hausa novel community — no spam, no video drops, no links. Just pure stories and conversations that make you feel at home.",
+    "color_theme": "#f4c27a",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1600346015866-8ef62f56b8b0?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/EBfYuhbuisLCkr3Z4GdFjn",
+        "preview": "Join our storytelling family 📖"
+      }
+    },
+    "rating": 4.9,
+    "clicks": 345,
+    "views": 1102,
+    "joined_date": "2025-03-20",
+    "last_active": "2025-10-05T18:18:00Z"
+  },
+  {
+    "id": 7,
+    "name": "Mrs D Shehu Collections",
+    "emoji": "🛍️",
+    "tagline": "Quality meets affordability 🪡✨",
+    "category": "Fashion",
+    "description": "Home of Leshi, Atamfa, Abaya, Shadda, and more! We sell with passion and deliver with love — quality at fair prices, no credit, just smiles.",
+    "color_theme": "#e9b7c5",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1615174320540-8e4e47a2b343?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/EpxSRzmqwrnF21dZqQP9E1",
+        "preview": "Shop exclusive deals now 💬"
+      }
+    },
+    "rating": 4.8,
+    "clicks": 298,
+    "views": 1005,
+    "joined_date": "2024-12-18",
+    "last_active": "2025-10-05T18:24:00Z"
+  },
+  {
+    "id": 8,
+    "name": "Rabiu Textile MM2",
+    "emoji": "🧶",
+    "tagline": "Feel the texture of success 🌟",
+    "category": "Textiles",
+    "description": "Top-quality fabrics designed to attract attention and express power. Because the right fabric doesn’t just dress you — it defines you.",
+    "color_theme": "#deb887",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1623218470642-59f68d05d495?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/CtDCj0zr0f2I3GdKqPdhB0?mode=ems_copy_t",
+        "preview": "Message us for exclusive fabric offers 🧵"
+      }
+    },
+    "rating": 4.7,
+    "clicks": 190,
+    "views": 720,
+    "joined_date": "2024-11-11",
+    "last_active": "2025-10-05T18:35:00Z"
+  },
+  {
+    "id": 9,
+    "name": "Dini Roma Investment",
+    "emoji": "💰",
+    "tagline": "Invest smart. Grow consistently 📈",
+    "category": "Business",
+    "description": "Building confidence through smart investment insights and trusted opportunities. Your growth journey starts with informed decisions.",
+    "color_theme": "#a3c6c4",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1554224155-3a585b6e1e2b?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/I2xFVG92UQN0MgKNVdikDo?mode=ems_copy_t",
+        "preview": "Chat with our investment circle 💬"
+      }
+    },
+    "rating": 4.4,
+    "clicks": 155,
+    "views": 583,
+    "joined_date": "2025-02-07",
+    "last_active": "2025-10-05T18:40:00Z"
+  },
+  {
+    "id": 10,
+    "name": "TeemaBilal Collections & More",
+    "emoji": "🍽️",
+    "tagline": "From kitchen to couture — we’ve got it all 💯",
+    "category": "Lifestyle",
+    "description": "Discover kitchen essentials, laces, and fashion pieces that make your home and wardrobe shine. Because quality matters everywhere.",
+    "color_theme": "#f0caa3",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1622015663319-5bcbf5a7d42b?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/D71bws1x8AH7QwOxDky385",
+        "preview": "Explore collections now 💬"
+      }
+    },
+    "rating": 4.6,
+    "clicks": 210,
+    "views": 790,
+    "joined_date": "2025-04-10",
+    "last_active": "2025-10-05T18:46:00Z"
+  },
+  {
+    "id": 11,
+    "name": "AishFat Online Business",
+    "emoji": "🛒",
+    "tagline": "Your comfort store, just a click away 💕",
+    "category": "Business",
+    "description": "Reliable online store with a variety of daily essentials and special deals. Bringing convenience right to your WhatsApp.",
+    "color_theme": "#d5aaff",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1616683694524-2a9f944147f5?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/LS3iC5VAeVrJ6dKOuacTV6?mode=ems_share_t",
+        "preview": "Chat and order directly 💬"
+      }
+    },
+    "rating": 4.3,
+    "clicks": 130,
+    "views": 490,
+    "joined_date": "2025-05-21",
+    "last_active": "2025-10-05T18:50:00Z"
+  },
+  {
+    "id": 12,
+    "name": "AYW Update Group",
+    "emoji": "🚀",
+    "tagline": "Stay updated. Stay unstoppable 🔥",
+    "category": "Community",
+    "description": "Your hub for trending updates, opportunities, and motivation. Because nothing is impossible when you stay informed.",
+    "color_theme": "#f7b733",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1605902711622-cfb43c4437d1?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/HLoPfYdBod4GMrOBdVY4xe?mode=ems_copy_t",
+        "preview": "Join the update group 💬"
+      }
+    },
+    "rating": 4.2,
+    "clicks": 95,
+    "views": 320,
+    "joined_date": "2025-06-01",
+    "last_active": "2025-10-05T18:52:00Z"
+  },
+  {
+    "id": 13,
+    "name": "Ultimax Gidan Kudi",
+    "emoji": "🏦",
+    "tagline": "Empowering your hustle, one step at a time 💸",
+    "category": "Business",
+    "description": "A space for entrepreneurs and earners to share, learn, and grow. Because every small idea can become a big income stream.",
+    "color_theme": "#8fd694",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1605902712910-428a5892b2b3?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/BqKYQFUz6yV9txtsyk90rW?mode=ems_share_t",
+        "preview": "Join the financial movement 💬"
+      }
+    },
+    "rating": 4.5,
+    "clicks": 168,
+    "views": 570,
+    "joined_date": "2025-07-18",
+    "last_active": "2025-10-05T18:54:00Z"
+  },
+  {
+    "id": 14,
+    "name": "Fauzys Kitchen",
+    "emoji": "🍛",
+    "tagline": "Taste that feels like home ❤️",
+    "category": "Food",
+    "description": "Delicious homemade meals and fresh spices — order from anywhere in Kano. Fast delivery, warm service, and authentic flavor guaranteed!",
+    "color_theme": "#f1a95e",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1617196034796-73b6e72eac14?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/EVkoKXRRo0y6nkU4k3Yroy?mode=ems_copy_t",
+        "preview": "Order delicious meals now 💬"
+      }
+    },
+    "rating": 4.9,
+    "clicks": 415,
+    "views": 1600,
+    "joined_date": "2024-10-20",
+    "last_active": "2025-10-05T18:56:00Z"
+  },
+  {
+    "id": 15,
+    "name": "Mrs Noor Trends & Graphics",
+    "emoji": "🎨",
+    "tagline": "Designs that speak louder than words 💖",
+    "category": "Graphics",
+    "description": "Creative graphics, visual branding, and digital art that connect emotionally. Transforming ideas into visuals that sell and inspire.",
+    "color_theme": "#a0d9f6",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1618005198919-d3d4b6d926a8?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://wa.me/message/IPTNTVZSPVLGF1",
+        "preview": "Chat now for your next graphic design 💬"
+      }
+    },
+    "rating": 4.9,
+    "clicks": 260,
+    "views": 980,
+    "joined_date": "2025-08-02",
+    "last_active": "2025-10-05T18:58:00Z"
+  },
+  {
+    "id": 16,
+    "name": "Arewa Threads & Crafts",
+    "emoji": "🪡",
+    "tagline": "Weaving heritage into every stitch 🧶",
+    "category": "Textiles",
+    "description": "Authentic handmade Arewa embroidery, agbada fabrics, and traditional wear. Crafted with cultural pride and a modern touch.",
+    "color_theme": "#f0d78c",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1627662166273-3e29afc1e5f1?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/Lp3K9k92vZP6av9kH5qgU4",
+        "preview": "Order your custom Arewa wears 🧵"
+      }
+    },
+    "rating": 4.8,
+    "clicks": 187,
+    "views": 690,
+    "joined_date": "2025-07-01",
+    "last_active": "2025-10-05T18:59:00Z"
+  },
+  {
+    "id": 17,
+    "name": "Arewa Digital Prints",
+    "emoji": "🖨️",
+    "tagline": "Print perfection. Every time. 💼",
+    "category": "Graphics",
+    "description": "Premium printing and branding solutions for businesses, weddings, and events. From logos to flyers, we bring your ideas to life.",
+    "color_theme": "#b4e3de",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1606326608697-2e4d4ebf9bcb?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/Fk6R6trqwqQ7Ikb8qFv3mM",
+        "preview": "Message us to print your brand 💬"
+      }
+    },
+    "rating": 4.7,
+    "clicks": 142,
+    "views": 510,
+    "joined_date": "2025-09-05",
+    "last_active": "2025-10-05T19:00:00Z"
+  },
+  {
+    "id": 18,
+    "name": "T&Z Cosmetics Hub",
+    "emoji": "💅",
+    "tagline": "Glow differently, shine confidently ✨",
+    "category": "Beauty",
+    "description": "Your trusted beauty plug — original skincare, body glow oils, perfumes, and makeup essentials that bring your inner glow out.",
+    "color_theme": "#f4c2c2",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1585386959984-a41552231693?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/JvR3Kx0YQ3xEJb4uJqW8bN",
+        "preview": "Shop your favorite glow kit 💬"
+      }
+    },
+    "rating": 4.8,
+    "clicks": 276,
+    "views": 930,
+    "joined_date": "2025-06-15",
+    "last_active": "2025-10-05T19:01:00Z"
+  },
+  {
+    "id": 19,
+    "name": "Gidan Mata Entrepreneurs",
+    "emoji": "👩🏽‍💻",
+    "tagline": "Empowering Arewa women in business 💪🏽",
+    "category": "Community",
+    "description": "A vibrant hub for female entrepreneurs to connect, share ideas, and grow together. We rise by lifting each other.",
+    "color_theme": "#e9c0d1",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1611175694985-c98da1b6c257?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/Lk0pFVB8XuzK5J6yC28C2Z",
+        "preview": "Join our sisterhood today 💬"
+      }
+    },
+    "rating": 5.0,
+    "clicks": 512,
+    "views": 2004,
+    "joined_date": "2024-09-30",
+    "last_active": "2025-10-05T19:03:00Z"
+  },
+  {
+    "id": 20,
+    "name": "Arewa Fashion Plug",
+    "emoji": "🧥",
+    "tagline": "Your trend starts here 👠",
+    "category": "Fashion",
+    "description": "Trendy northern fashion with a twist of global elegance. From Abayas to accessories — stay bold, beautiful, and authentic.",
+    "color_theme": "#f7d8a7",
+    "view_type": "modal",
+    "image_url": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80",
+    "video_url": "",
+    "links": {
+      "WhatsApp": {
+        "url": "https://chat.whatsapp.com/Jb8R4XlJ8yA2PoM6QdU2bG",
+        "preview": "Explore new trends 💬"
+      }
+    },
+    "rating": 4.6,
+    "clicks": 223,
+    "views": 870,
+    "joined_date": "2025-05-02",
+    "last_active": "2025-10-05T19:04:00Z"
   }
         ]
